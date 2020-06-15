@@ -1,0 +1,68 @@
+.el-tabs--card {
+  .el-tabs__header {
+    border-bottom: none;
+    margin-bottom: 10px;
+    .el-tabs__nav-wrap {
+      padding: 0;
+      .el-tabs__nav-next,
+      .el-tabs__nav-prev {
+        display: none;
+      }
+      .el-tabs__nav-scroll {
+        overflow: visible;
+        &::after {
+          display: block;
+          content: '';
+          clear: both;
+          zoom: 1;
+        }
+        .el-tabs__nav {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          border: none !important;
+          padding-top: 8px;
+          padding-bottom: 8px;
+
+          .el-tabs__item {
+            width: 46px;
+            height: 46px;
+            padding: 0 !important;
+            border-radius: 5px;
+            overflow: hidden;
+            border: none !important;
+            height: auto !important;
+            overflow: visible;
+            outline: none;
+
+            &:focus {
+              outline: none;
+            }
+
+            .tab-slot {
+              outline: none;
+              &:focus {
+                outline: none;
+              }
+
+              .slot-box {
+                outline: none;
+                &:focus {
+                  outline: none;
+                }
+              }
+            }
+
+            .selected {
+              right: 0 !important;
+            }
+          }
+
+          .el-tabs__item.active {
+            border-color: $--font-color-selected;
+          }
+        }
+      }
+    }
+  }
+}

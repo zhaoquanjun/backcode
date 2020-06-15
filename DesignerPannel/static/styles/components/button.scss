@@ -1,0 +1,60 @@
+@import '../base/var_blank';
+
+.ym-button--primary {
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 8px 25px;
+  font-size: $--font-size-small;
+  text-align: center;
+  color: $--usual-font-color-main;
+  background-color: $--color-main;
+  border-radius: $--border-radius-base;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $--background-hover;
+  }
+}
+
+.ym-button--isplain {
+  display: inline-block;
+  outline: none;
+  border: none;
+  padding: 8px 25px;
+  font-size: $--font-size-small;
+  text-align: center;
+  color: $--color-main;
+  border: 1px solid $--color-main;
+  border-radius: $--border-radius-base;
+  background-color: $--usual-font-color-main;
+  cursor: pointer;
+
+  &:hover {
+    color: $--usual-font-color-main;
+    background-color: $--background-hover;
+    border-color: $--background-hover;
+  }
+}
+
+.ym-button--column {
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px 0;
+  font-size: $--font-size-small;
+  text-align: center;
+  color: $--usual-font-color-main;
+  background-color: $--color-main;
+  border-radius: $--border-radius-base;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $--background-hover;
+  }
+}
+
+.ym-button--column.disabled {
+  color: $--usual-font-color-disabled;
+  background-color: $--list-background-selected;
+}

@@ -1,0 +1,664 @@
+.c-personalcenter {
+  .personalcenter--pc {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 50px auto 50px;
+    min-width: 874px;
+    width: calc(100% - 120px);
+    height: calc(100% - 100px);
+
+    .personal-content__area {
+      margin-top: 0;
+      float: left;
+      margin-left: 24px;
+      height: 100%;
+      width: calc(100% - 200px - 24px);
+      min-width: 650px;
+    }
+  }
+
+
+  .personal-menu__area {
+    float: left;
+    width: 200px;
+    height: 100%;
+    background: #fff;
+    border: 1px solid rgba(238, 238, 238, 1);
+  }
+
+  .personal-menu__area img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu-list__area li {
+    height: 41px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .menu-list__area li.personal-bgcolor__area {
+    color: #fff;
+  }
+
+
+
+  .personal-content__area .perosnal-content__header {
+    padding: 18px 24px;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    background: #fff;
+    border: 1px solid rgba(238, 238, 238, 1);
+  }
+
+  .personal-content__area .personal-content__main {
+    margin-top: 14px;
+    height: calc(100% - 60px - 14px);
+    background: #fff;
+    border: 1px solid rgba(238, 238, 238, 1);
+  }
+
+  .personal-content__area .personal-content__main .personal-content__item {
+    display: none;
+  }
+
+  .personal-content__area .personal-content__main .personal-content__item.active {
+    display: block;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info {
+    padding-top: 54px;
+    padding-left: 50px;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-avator {
+    position: relative;
+    margin-top: 6px;
+    float: left;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #eee;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-avator:hover .avator-cover {
+    display: flex;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-avator .avator-cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(38, 38, 38, .79);
+    ;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-avator .avator-cover input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0;
+  }
+
+  .personal-content__area .personal-content__main .person-avator .avator-cover i {
+    font-size: 24px;
+    color: #fff;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-avator img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-info__list {
+    float: left;
+    margin-left: 24px;
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-info__list .user-level {
+    margin-left: 16px;
+    padding: 3px 8px;
+    color: #A1A8B1;
+    border-radius: 16px;
+    border: 1px solid rgba(238, 238, 238, 1);
+  }
+
+  .personal-content__area .personal-content__main .personal-account__info .person-info__list li {
+    margin-bottom: 4px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .personal-center__header {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 16px;
+    color: #262626;
+    background: #fff;
+  }
+
+  .personal-center__header i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    color: #A1A8B1;
+  }
+
+  .personal-info__area {
+    margin-top: 10px;
+    height: 90px;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+  }
+
+  .personal-info__area .personal-avator {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    background: #ccc;
+  }
+
+  .personal-info__area .personal-avator img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .personal-info__area .personal-account {
+    margin-left: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    ;
+  }
+
+  .personal-info__area .personal-level {
+    margin-left: 16px;
+    display: block;
+    padding: 3px 8px;
+    font-size: 12px;
+    line-height: 17px;
+    color: #A1A8B1;
+    border-radius: 16px;
+    border: 1px solid rgba(238, 238, 238, 1);
+  }
+
+  .personal-content__area {
+    margin-top: 10px;
+  }
+
+  .personal-content__area li {
+    padding: 0 16px;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    border-bottom: 1px solid #F0F3F7;
+  }
+
+  .personal-content__area li a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .personal-content__area li:last-of-type {
+    border-bottom: none;
+  }
+
+  .personal-content__area li span {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .personal-content__area li i {
+    color: #A1A8B1;
+  }
+
+  .person-logout__area {
+    margin-top: 10px;
+    font-size: 14px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background: #fff;
+    color: #FB4D68;
+  }
+
+  .personal-account__info {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(238, 238, 238, 1);
+  }
+
+  .personal-account__social {
+    margin-top: 16px;
+    border-top: 1px solid rgba(238, 238, 238, 1);
+
+    button {
+      border: none;
+      background: transparent;
+    }
+  }
+
+
+
+
+}
+
+
+.person-third-party__list {
+
+  li,
+  li .left-wrap,
+  li .right-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    padding: 0 32px;
+    height: 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ebeced;
+    justify-content: space-between;
+  }
+
+  .left-wrap {
+    .iconfont {
+      font-size: 20px;
+      color: #262626;
+    }
+
+    .set-name {
+      display: inline-block;
+      width: 105px;
+      font-size: 12px;
+      color: #262626;
+      margin-left: 10px;
+    }
+
+    .social-desc {
+      color: #9F9F9F;
+      font-size: 12px;
+    }
+  }
+
+  .right-wrap {
+    .pd-left {
+      padding-left: 40px;
+      color: rgba(235, 236, 237, 1);
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+
+      .bind-status {
+        padding-right: 15px;
+        padding-left: 10px;
+        display: inline-block;
+      }
+
+      :last-child {
+        padding-left: 15px;
+      }
+
+    }
+
+    .tobind {
+      color: #0895E6;
+    }
+
+    .notbind {
+      color: #FB4E68;
+    }
+
+    .already-bind {
+      color: #22CD5D;
+    }
+  }
+}
+
+.c-personal {
+  .personal-account__info {
+    overflow: hidden;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .personal-account__social {
+    margin-top: 16px;
+    border-top: 1px solid #EEEEEE;
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+  }
+
+}
+
+.wechat-bind--mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+  transition: all .3s ease-in-out;
+
+  .mask_content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 386px;
+    height: auto;
+
+    iframe {
+      width: 386px !important;
+      padding: 28px 24px 35px;
+      background: #fff;
+      box-sizing: border-box;
+    }
+
+    .close_layer {
+      cursor: pointer;
+      position: absolute;
+      right: 25px;
+      top: 32px;
+      color: rgba(161, 168, 177, 1);
+    }
+
+    .wechat-title {
+      position: absolute;
+      left: 25px;
+      top: 32px;
+      font-size: 16px;
+      color: rgba(38, 38, 38, 1);
+    }
+  }
+
+}
+
+.bind-mask_wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+  transition: all .3s ease-in-out;
+
+  .sign-wrap {
+    padding: 32px 25px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 416px;
+    height: auto;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+
+    .form-row.check-title-tip {
+      margin: 0 0 16px;
+    }
+
+    .captcha {
+      margin-bottom: 25px;
+    }
+
+    .btn-sms {
+      color: rgba(255, 107, 0, 1);
+    }
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 22px;
+
+    .close_layer {
+      cursor: pointer;
+    }
+
+    :first-child {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+
+  .row-tip {
+    height: 37px;
+    line-height: 37px;
+    background: rgba(255, 251, 248, 1);
+    border-radius: 2px;
+    border: 1px solid rgba(255, 202, 163, 1);
+    font-size: 12px;
+    color: rgba(255, 107, 0, 1);
+    margin: 0 0 24px !important;
+    text-align: center;
+  }
+
+  .sign-wrap .form-btn {
+    text-align: right;
+  }
+
+  .sign-wrap .form-btn .signin-btn {
+    width: 76px;
+    min-width: 76px;
+    height: 32px;
+    line-height: 32px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    background: transparent;
+    font-size: 12px;
+    border: 1px solid rgba(255, 107, 0, 1);
+  }
+
+  .sign-wrap .form-btn .signin-btn.cancel {
+    color: rgba(255, 107, 0, 1);
+
+  }
+
+  .sign-wrap .form-btn .signin-btn.submit {
+    border-color: transparent;
+    background: rgba(255, 107, 0, 1);
+    color: #fff;
+    margin-left: 15px;
+
+  }
+
+  .pwd-rule {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 2px;
+    top: 53px;
+    z-index: 2;
+    background: #fff;
+
+    >div {
+      line-height: 25px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: -20px;
+      left: 32px;
+      border-width: 10px;
+      border-style: solid;
+      border-color: transparent transparent #fff transparent;
+      z-index: 4000;
+
+    }
+
+    .error {
+      i {
+        color: #fb4d68;
+        padding-right: 10px;
+      }
+    }
+
+    .success {
+      i {
+        color: #22CD5D;
+        padding-right: 10px;
+      }
+
+    }
+  }
+}
+
+.layer-tip--wrap {
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+
+  .mask_content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    margin: auto;
+    width: 360px;
+    background: #fff;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    transform: translateY(-50%);
+  }
+
+  .icon__area {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin: 0 auto;
+
+  }
+
+  .success.icon__area {
+    background-color: #23cd5d;
+  }
+
+  .success.icon__area {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 22px;
+      color: #fff;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      top: 36%;
+      left: 10px;
+      transform-origin: center;
+      transform: translate(-50%, -30%) rotate(45deg);
+      -webkit-transform: translate(90%, -28%) rotate(45deg);
+    }
+  }
+
+  .warning.icon__area {
+    background-color: #ff9538;
+  }
+
+  .warning {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 4px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -2px;
+      background-color: #fff;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 4px;
+      height: 4px;
+      margin-top: 13px;
+      margin-left: -2px;
+      background-color: #fff;
+    }
+  }
+
+
+
+  .tip {
+    margin-top: 16px;
+    font-size: 12px;
+    color: #989898;
+    text-align: center;
+  }
+}
+
+
+
+@media screen and (max-width: 992px) {
+  #personalcenterpc {
+    display: none;
+  }
+
+  #personalcentermobile {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #personalcenterpc {
+    display: block;
+  }
+
+  #personalcentermobile {
+    display: none;
+  }
+}

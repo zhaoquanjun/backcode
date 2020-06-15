@@ -1,0 +1,347 @@
+.c-msgboard {
+  // width: 400px;
+  text-align: center;
+
+  .header {
+    font-size: 18px;
+    margin-bottom: 14px;
+    margin-left: 20px;
+  }
+
+  .sign-wrap {
+    width: 76%;
+    margin: 80px 0 72px;
+
+    .msgboard-item {
+      width: 20px;
+      float: left;
+    }
+
+    .msgboard-item__label {
+
+      text-align: right;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 40px;
+      box-sizing: border-box;
+    }
+
+    .msgboard-item__label::before {
+      content: "*";
+      color: #f56c6c;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+
+    .ipt-textarea {
+      resize: none;
+    }
+
+    // .ipt-wrap {
+    //   margin-left: 20px;
+    // }
+
+    .form-row {
+      position: relative;
+      margin: 0 0 25px;
+    }
+
+    .form-code .ipt-wrap {
+      display: flex;
+    }
+
+    .code {
+      min-width: 100px;
+      margin-left: 16px;
+      font-style: italic;
+      color: green;
+      border: 0;
+      font-size: 16px;
+      padding: 2px 3px;
+      letter-spacing: 3px;
+      font-weight: bolder;
+      background-color: #F9F9F9;
+    }
+
+    .ipt-wrap {
+      position: relative;
+      display: block;
+    }
+
+    .ipt {
+      width: 100%;
+      height: 40px;
+      min-width: 0;
+      padding: 6px 18px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      // min-height: 22px;
+      // line-height: 22px;
+      font-size: 13px;
+    }
+
+    .form-btn {
+      text-align: center;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      width: 100%;
+      padding: 0 10px;
+      box-sizing: border-box;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-align: center;
+      cursor: pointer;
+
+      &.disabled {
+        pointer-events: none;
+      }
+    }
+
+
+
+    .tip-error {
+      display: none;
+      position: absolute;
+      left: 3px;
+      top: 40px;
+      height: 18px;
+      padding: 0 0 0 27px;
+      background: url(https://static.zhipin.com/zhipin-geek/v73/web/geek/images/icons.png) no-repeat 0 -1059px;
+      background-size: 18px auto;
+      color: #262626;
+      text-align: left;
+      line-height: 18px;
+    }
+
+    .form-content .tip-error {
+      top: 60px;
+    }
+
+    .ellipsis {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+
+  }
+
+  .captcha-content {
+    position: absolute;
+    top: -186px;
+    left: 0px;
+    display: none;
+    background: #fff;
+    width: 304px;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.19);
+  }
+
+  .captcha-top {
+    padding: 0 12px;
+    height: 32px;
+  }
+
+  .captcha-top .title {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(38, 38, 38, 1);
+    line-height: 32px;
+  }
+
+  .captcha-top .refresh {
+    float: right;
+    width: 14px;
+    height: 14px;
+    margin-top: 9px;
+    margin-right: 16px;
+    background: url(http://login.console.wezhan.cn/images/icon-refresh.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  .captcha-top .close {
+    float: right;
+    width: 14px;
+    height: 14px;
+    margin-top: 9px;
+    background: url(http://login.console.wezhan.cn/images/icon-close.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  #captchaBox {
+    width: 304px !important;
+  }
+
+  #captchaBox img {
+    width: 74px !important;
+    margin: 1px;
+  }
+
+
+
+
+
+  #box {
+    position: relative;
+    height: 40px;
+    cursor: pointer;
+    /* background:rgba(232,232,232,1); */
+    /* opacity:0.2969; */
+  }
+
+  #box .verify-item {
+    height: 40px;
+    padding: 2px;
+  }
+
+  #box .verify-item div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+  }
+
+  #box .verify-default {
+    border: 1px solid #e5e5e5;
+  }
+
+  #box .verify-default div {
+    background: #e5e5e5;
+    padding: 7px 90px;
+    color: rgba(117, 117, 117, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #box .verify-default i {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url(http://login.console.wezhan.cn/images/verify-default.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  #box .verify-default p {
+    float: left;
+    width: 90px;
+    font-size: 12px;
+    color: rgba(117, 117, 117, 1);
+  }
+
+  #box .verify-refresh {
+    border: 1px solid #e5e5e5;
+  }
+
+  #box .verify-refresh {
+    display: none;
+  }
+
+  #box .verify-refresh div {
+    background: #e5e5e5;
+    padding: 7px 65px;
+    color: rgba(117, 117, 117, 1);
+  }
+
+  #box .verify-failed {
+    display: none;
+    border: 1px solid #E02020;
+  }
+
+  #box .verify-failed div {
+    background: rgba(224, 32, 32, 0.3);
+    padding: 7px 85px;
+    color: #E02020;
+  }
+
+  #box .verify-failed i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 3px;
+    background: url(http://login.console.wezhan.cn/images/verify-failed.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  #box .verify-failed p {
+    display: inline-block;
+    vertical-align: top;
+    height: 20px;
+    font-size: 12px;
+    color: #E02020;
+    line-height: 20px;
+  }
+
+  #box .verify-success {
+    display: none;
+    border: 1px solid rgba(99, 220, 140, 1);
+  }
+
+  #box .verify-success div {
+    background: rgba(99, 220, 140, 0.3);
+    padding: 7px 105px;
+    box-sizing: border-box;
+    color: rgba(99, 220, 140, 1);
+  }
+
+  #box .verify-success i {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin: 3px;
+    background: url(http://login.console.wezhan.cn/images/verify-success.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  #box .verify-success p {
+    display: inline-block;
+    vertical-align: top;
+    height: 20px;
+    width: 60px;
+    font-size: 12px;
+    color: rgba(99, 220, 140, 1);
+    line-height: 20px;
+  }
+
+
+
+  .layer-tip {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 250px;
+    transform: translate3d(-50%, -50%, 0);
+    padding: 15px;
+    line-height: 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 3px;
+  }
+
+  @media screen and (max-width: 991px) {
+    & {
+      width: calc(100% - 3.733% - 3.733%) !important;
+      margin-left: 3.733% !important;
+      margin-right: 3.733% !important;
+    }
+
+    .sign-wrap {
+      width: 100%;
+      padding: 0;
+      box-sizing: border-box;
+
+      .submit-btn {
+        width: 100%;
+        margin-left: 0;
+      }
+    }
+
+
+  }
+}

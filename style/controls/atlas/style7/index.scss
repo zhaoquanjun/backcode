@@ -1,0 +1,119 @@
+.c-atlas[data-c-style=style7] {
+  .atlas-list__area {
+    position: relative;
+    max-width: 100%;
+
+    .atlas-list {
+      overflow-x: hidden;
+      overflow-y: visible;
+      padding: 20px 0;
+      /*极为重要的两行代码 */
+      // margin: -20px 0;
+      /* 具体值可以根据实际情况调整 */
+      flex-wrap: nowrap;
+
+      .list-item {
+        flex: none;
+        padding: 0;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: all 0.3s ease-in-out;
+          position: relative;
+          z-index: 1;
+        }
+
+        .list-content {
+          padding: 10px 24px 32px;
+          background: linear-gradient(180deg,
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0.4) 100%);
+        }
+      }
+    }
+
+    .translate-icon__area {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      z-index: 10;
+
+      i {
+        font-size: 12px;
+        display: inline-block;
+      }
+    }
+
+    .move-prev.disabled,
+    .move-next.disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .move-prev {
+      left: 0;
+      transform: translateX(-50%);
+      box-shadow: -3px 0 8px #ccc;
+    }
+
+    .move-next {
+      right: 0;
+      transform: translateX(50%);
+      box-shadow: 3px 0 8px #ccc;
+    }
+  }
+
+
+
+  .ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+
+  @media screen and (max-width: 992px) {
+    & {
+      padding-bottom: 0;
+
+      .atlas-list__area {
+        .atlas-list {
+          .list-item {
+            margin-bottom: 0;
+
+            &:hover {
+              transform: scale(1);
+            }
+          }
+
+          li.col-md-item1 {
+            width: 100% !important;
+
+            .imgview {
+              height: 469px;
+            }
+          }
+        }
+
+        .move-prev,
+        .move-next {
+          display: none;
+        }
+      }
+
+
+
+      .carousel-indicators {
+        opacity: 1;
+      }
+    }
+  }
+}

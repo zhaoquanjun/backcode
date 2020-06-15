@@ -1,0 +1,88 @@
+  .c-atlas[data-c-style=style2].atlas-signal__line {
+    .atlas-list__area {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+
+      .atlas-list {
+        flex-wrap: nowrap;
+
+        .list-item:first-of-type {
+          flex-wrap: nowrap;
+          // transition: all .5s ease-in-out;
+        }
+
+        .col-item1 {
+          min-width: 100%;
+        }
+
+        .col-item2 {
+          min-width: 50%;
+        }
+
+        .col-item3 {
+          min-width: 33.3333%;
+        }
+
+        .col-item4 {
+          min-width: 25%;
+        }
+
+        .col-item5 {
+          min-width: 20%;
+        }
+
+        .col-item6 {
+          min-width: 16.6666%;
+        }
+      }
+
+      .translate-icon__area {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 48px;
+        cursor: pointer;
+      }
+
+      .move-prev.disabled,
+      .move-next.disabled {
+        cursor: not-allowed;
+      }
+
+      .move-prev {
+        left: 20px;
+        background: url('https://nwzimg.clouddream.net/newwezhan/base/control/designerImg/atlas/atlas_translate_prev.png') no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .move-next {
+        right: 20px;
+        background: url('https://nwzimg.clouddream.net/newwezhan/base/control/designerImg/atlas/atlas_translate_next.png') no-repeat center center;
+        background-size: 100% 100%;
+      }
+    }
+
+    .ellipsis {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @media screen and (max-width: 992px) {
+      & {
+
+        .atlas-list {
+          li.col-md-item1 {
+            min-width: 100% !important;
+          }
+
+          li.col-md-item2 {
+            min-width: 50% !important;
+          }
+        }
+      }
+    }
+  }

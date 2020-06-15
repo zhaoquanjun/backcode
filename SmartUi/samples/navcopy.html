@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>导航控件</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #262626;
+    }
+
+    .c-col-1 {
+      width: 8.33333333%;
+    }
+
+    .c-col-2 {
+      width: 16.66666667%;
+    }
+
+    .c-col-3 {
+      width: 25%;
+    }
+
+    .c-col-4 {
+      width: 33.33333333%;
+    }
+
+    .c-col-5 {
+      width: 41.66666667%;
+    }
+
+    .c-col-6 {
+      width: 50%;
+    }
+
+    .c-col-7 {
+      width: 58.33333333%;
+    }
+
+    .c-col-8 {
+      width: 66.66666667%;
+    }
+
+    .c-col-9 {
+      width: 75%;
+    }
+
+    .c-col-10 {
+      width: 83.33333333%;
+    }
+
+    .c-col-11 {
+      width: 91.66666667%;
+    }
+
+    .c-col-12 {
+      width: 100%;
+    }
+
+    .navigation {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0;
+      z-index: 1500;
+    }
+
+     .container {
+      height: 50px;
+      line-height: 50px;
+      background-color: #fff;
+      color: #fff;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      position: relative;
+      box-sizing: border-box;
+      overflow: hidden;
+      padding: 0 16px;
+    }
+
+    /* logo begin */
+    .container h1 {
+      float: left;
+      height: 100%;
+      overflow: hidden;
+      padding: 8px 0;
+      box-sizing: border-box;
+    }
+
+    .container h1 a {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container .nav-logo {
+      width: 100%;
+    }
+
+    /* login end */
+    .container .nav {
+      float: left;
+      text-align: center;
+      vertical-align: top;
+      height: 100%;
+
+    }
+
+    .container .nav-list {
+      font-size: 0;
+      display: inline-block;
+      background: #0595E6;
+      vertical-align: top;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .nav-list .nav-item {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      min-width: 80px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .container .nav-list .nav-item a {
+      display: block;
+      color: #fff;
+      padding: 0 8px;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    .container .nav-list .nav-item a:hover{
+      color: #63DC8C;
+    }
+    .container .nav-list .nav-item .active {
+      background: #63DC8C;
+    }
+
+    .container .signContainer {
+      float: left;
+      height: 100%;
+      text-align: right;
+    }
+
+    .container .login-register {
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+      vertical-align: top;
+    }
+
+    .container .login-register button {
+      border: none;
+      background: #fff;
+      line-height: 20px;
+      padding: 8px 12px;
+      border: 1px solid transparent;
+      cursor: pointer;
+
+    }
+
+    .container .login-register .login {
+      background: #0595E6;
+      color: #fff;
+      margin-right: 20px;
+    }
+    .container .login-register .login:hover{
+      background: rgba(5,149,230,0.7)
+    }
+    .container .login-register .register:hover{
+      background: rgba(204,204,204,0.7)
+    }
+    .container .login-register .register {
+      border: 1px solid;
+      border-color: #0595E6;
+      color: #0595E6;
+    }
+
+    @media screen and (max-width: 750px) {
+      .signContainer {
+        display: none
+      }
+
+      .container .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .container .header-mask {
+        background: rgba(38, 38, 38, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+      }
+
+      .container .header-mask.active {
+        opacity: 1;
+      }
+
+      .container .nav {
+        position: fixed;
+        top: 0;
+        background: #fff;
+        right: 0;
+        z-index: 1;
+        width: 0;
+        overflow: hidden;
+        transition: width 0.2s linear;
+      }
+
+      .container .nav.active {
+        width: 80%
+      }
+
+      .container .nav-list {
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 1000000;
+        background: #fff;
+        padding-left: 40px;
+
+      }
+
+      .nav-list .nav-item {
+        display: block;
+        text-align: left;
+        border-bottom: 1px solid;
+        border-color: #f5f5f5;
+      }
+
+      .container .nav-list .nav-item a {
+        color: #262626
+      }
+
+      .container .nav-list .nav-item .active {
+        background: transparent;
+      }
+
+      .mb-nav-icon {
+        position: absolute;
+        right: 14px;
+        z-index: 100;
+        width: 16px;
+        height: 16px;
+        padding: 9px;
+        background: url("http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/QNjlMKQclkqV8euAsLq1BA.png") no-repeat center;
+        background-size: 40%;
+        z-index: 100;
+        background-color: #0595E6;
+      }
+      .mb-nav-icon.active {
+        background: url("http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/evxrs8q_MkatepjQqzoCYg.png") no-repeat center;
+        background-color: #0595E6;
+        background-size: 40%;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navigation">
+  
+      <div class="container">
+
+        <h1 class="logo nav-item c-col-1">
+          <a href="">
+            <img class="nav-logo"
+              src="http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/6xu5MajX6kiJwvJYbWxzYA.ico" alt="">
+          </a>
+        </h1>
+
+        <div class="nav nav-item c-col-8">
+          <ul class="nav-list">
+            <li class="list-item "><a class="active" href="">首页</a></li>
+            <li class="list-item"><a href="">关于我们</a></li>
+            <li class="list-item"><a href="">新闻列表</a></li>
+            <li class="list-item"><a href="">公司产品</a></li>
+            <li class="list-item active"><a href="">联系我们</a></li>
+            <li class="nalistv-item"><a href="">更多</a></li>
+          </ul>
+        </div>
+        <div class="signContainer nav-item c-col-3">
+          <div class="login-register">
+            <button class="login" type="button">登录</button>
+            <button class="register" type="button">注册</button>
+          </div>
+        </div>
+        <div class="mb-nav-icon" id="drapNav"></div>
+        <div class="header-mask"></div>
+      </div>
+ 
+  </div>
+
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  $(function () {
+    $("#drapNav").click(function () {
+      $(".nav,.header-mask,.mb-nav-icon").toggleClass("active");
+
+    })
+   var $navItem = $(".container").find('.nav-item');
+   $navItem.eq(0).attr("class","logo nav-item c-col-3")
+  })
+</script>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1386718_uldiamo17h.css">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      box-sizing: border-box;
+    }
+
+    button,
+    textarea {
+      outline: none;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .new_msg {
+      padding: 50px 140px;
+    }
+
+    .new_msg .title {
+      font-size: 16px;
+    }
+
+
+    .msg_content {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding: 24px;
+      background-color: rgba(249, 249, 249, 1);
+      font-size: 16px;
+      color: #4E4E4E;
+
+    }
+
+    .new_msg .source_page {
+      margin-bottom: 44px;
+      font-size: 14px;
+      color: #4E4E4E;
+    }
+
+    .msg_wrap .msg_title,
+    .msg_wrap .msg_detail {
+      margin-bottom: 15px;
+    }
+
+    .msg_contact .mobile,
+    .msg_contact .time {
+      color: rgba(152, 152, 152, 1);
+    }
+
+    .answer_wrap {}
+
+    .answer_btn {
+      cursor: pointer;
+      width: 90px;
+      height: 32px;
+      border: none;
+      color: #fff;
+      background: rgba(255, 107, 0, 1);
+      border-radius: 2px;
+    }
+
+    .answer_content {
+
+      display: none;
+      position: relative;
+      margin-top: 32px;
+    }
+
+    .answer_content .answer_detail {
+      width: 100%;
+      border: 1px solid rgba(235, 236, 237, 1);
+      padding: 15px;
+    }
+
+    .answer_content .footer {
+      text-align: right;
+      margin-top: 24px;
+    }
+
+    .answer_content .footer button {
+      cursor: pointer;
+      width: 76px;
+      height: 32px;
+      color: rgba(255, 107, 0, 1);
+      background: rgba(255, 255, 255, 1);
+      border-radius: 2px;
+      border: 1px solid rgba(255, 107, 0, 1);
+    }
+
+    .answer_content .footer .submit {
+      color: #fff;
+      background: rgba(255, 107, 0, 1);
+      margin-left: 16px;
+    }
+
+    .view_detail {
+      font-size: 12px;
+      color: #000000;
+      margin-top: 40px;
+    }
+
+    .view_detail a {
+      color: #0895E7;
+    }
+
+    .replied_content {
+      display: none;
+    }
+
+    .mask_wrap .icon__area {
+      position: relative;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      /* background-color: #ff9538; */
+      background-color: #fff;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+
+    .mask_wrap .icon__area::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 22px;
+      color: #000;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      top: 36%;
+      left: 10px;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      transform: translate(-50%, -30%) rotate(45deg);
+      -webkit-transform: translate(90%, -28%) rotate(45deg);
+    }
+
+    /* 
+    .mask_wrap .icon__area::before,
+    .mask_wrap .icon__area::after {
+      content: "";
+      position: absolute;
+      width: 4px;
+      left: 50%;
+      top: 50%;
+      background-color: #fff;
+    }
+
+    .mask_wrap .icon__area::before {
+      height: 20px;
+      margin-top: -12px;
+      margin-left: -2px;
+
+    }
+
+    .mask_wrap .icon__area::after {
+      height: 4px;
+      margin-top: 11px;
+      margin-left: -2px;
+    } */
+
+    .mask_wrap {
+      /* display: none; */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(0, 0, 0, .6);
+    }
+
+    .mask_wrap .mask_content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 360px;
+      height: 160px;
+      /* background: rgba(255, 255, 255, 1); */
+      background: rgba(0, 0, 0, 1);
+      border-radius: 3px;
+      transition: all .3s ease-in-out;
+    }
+
+    .mask_wrap .tip {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #989898;
+      text-align: center;
+    }
+
+    @media screen and (max-width: 991px) {
+      .new_msg {
+        padding: 15px;
+      }
+    }
+
+    .layer-tip {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      width: 250px;
+      transform: translate3d(-50%, -50%, 0);
+      padding: 15px;
+      line-height: 20px;
+      text-align: center;
+      color: #fff;
+      border-radius: 3px;
+      transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="iconfont iconicon-duose3"></div>
+  <div class="container">
+    <div class="new_msg">
+      <header class="title">您好！您的站点【网站名称】收到一条新留言</header>
+      <section class="msg_wrap">
+
+        <div class="msg_content">
+          <div class="source_page">来源页面：联系我们</div>
+          <div class="msg_title">标题：课程预约 </div>
+          <div class="msg_detail">这是一段留言这是一</div>
+          <div class="msg_contact">
+            <span class="mobile">联系方式：12345678910</span>
+            <span class="time">时间：2020-01-19 12:03</span>
+          </div>
+        </div>
+        <div class="answer_wrap"><button class="answer_btn">立即回复</button></div>
+        <div class="answer_content">
+          <textarea class="answer_detail" name="" id="" placeholder="请输入回复内容……" cols="30" rows="10"></textarea>
+          <footer class="footer">
+            <button class="cancel">取消</button>
+            <button class="submit">回复</button>
+          </footer>
+        </div>
+
+      </section>
+      <div class="replied_content">
+        <header class="title">回复内容：</header>
+        <section class="msg_wrap">
+          <div class="msg_content">
+            <div class="msg_detail">这是一段留言这是一</div>
+            <div class="msg_contact">
+              <span class="mobile">管理员 </span>
+              <span class="time">2020-01-19 12:03</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer class="view_detail">
+        <div><span>前往管理控制台查看: </span>
+          <a href="https://dashboard.clouddream.net/board">https://dashboard.clouddream.net/board</a> </div>
+      </footer>
+    </div>
+    <div class="mask_wrap">
+      <div class="mask_content">
+        <div class="icon__area"></div>
+        <div class="tip">回复成功</div>
+      </div>
+    </div>
+    <div class="layer-tip">错误提示</div>
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  var $answer_content = $(".answer_content")
+  $(".answer_btn").click(function () {
+    $answer_content.show()
+  })
+  $('.submit').click(function () {
+    $('.mask_wrap')
+      .show()
+      .delay(2000)
+      .fadeOut()
+    $(".answer_btn").hide()
+    $answer_content.hide()
+
+    $(".replied_content").show()
+  })
+  $('.cancel').click(function () {
+    $answer_content.hide()
+  })
+</script>
+
+</html>

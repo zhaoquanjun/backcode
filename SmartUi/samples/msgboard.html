@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1386718_eg2nq254a86.css">
+  <style>
+    .captcha-content {
+      position: absolute;
+      top: -186px;
+      left: 0px;
+      display: none;
+      background: #fff;
+      width: 304px;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.19);
+    }
+
+    .captcha-top {
+      padding: 0 12px;
+      height: 32px;
+    }
+
+    .captcha-top .title {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(38, 38, 38, 1);
+      line-height: 32px;
+    }
+
+    .captcha-top .refresh {
+      float: right;
+      width: 14px;
+      height: 14px;
+      margin-top: 9px;
+      margin-right: 16px;
+      background: url(http://login.console.wezhan.cn/images/icon-refresh.png) no-repeat center;
+      -o-background-size: 100%;
+      background-size: 100%;
+    }
+
+    .captcha-top .close {
+      float: right;
+      width: 14px;
+      height: 14px;
+      margin-top: 9px;
+      background: url(http://login.console.wezhan.cn/images/icon-close.png) no-repeat center;
+      -o-background-size: 100%;
+      background-size: 100%;
+    }
+
+    #captchaBox {
+      width: 304px !important;
+    }
+
+    #captchaBox img {
+      width: 74px !important;
+      margin: 1px;
+    }
+
+
+
+
+
+    #box {
+      position: relative;
+      height: 40px;
+      cursor: pointer;
+      /* background:rgba(232,232,232,1); */
+      /* opacity:0.2969; */
+    }
+
+    #box .verify-item {
+      height: 34px;
+      padding: 2px;
+    }
+
+    #box .verify-item div {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 12px;
+      line-height: 20px;
+    }
+
+    #box .verify-default {
+      border: 1px solid #e5e5e5;
+    }
+
+    #box .verify-default div {
+      background: #e5e5e5;
+      padding: 7px 90px;
+      color: rgba(117, 117, 117, 1);
+    }
+
+    #box .verify-default i {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background: url(http://login.console.wezhan.cn/images/verify-default.png) no-repeat center;
+      -o-background-size: 100%;
+      background-size: 100%;
+    }
+
+    #box .verify-default p {
+      float: left;
+      height: 20px;
+      width: 90px;
+      font-size: 12px;
+      color: rgba(117, 117, 117, 1);
+      line-height: 20px;
+    }
+
+    #box .verify-refresh {
+      border: 1px solid #e5e5e5;
+    }
+
+    #box .verify-refresh {
+      display: none;
+    }
+
+    #box .verify-refresh div {
+      background: #e5e5e5;
+      padding: 7px 65px;
+      color: rgba(117, 117, 117, 1);
+    }
+
+    #box .verify-failed {
+      display: none;
+      border: 1px solid #E02020;
+    }
+
+    #box .verify-failed div {
+      background: rgba(224, 32, 32, 0.3);
+      padding: 7px 85px;
+      color: #E02020;
+    }
+
+    #box .verify-failed i {
+      float: left;
+      width: 14px;
+      height: 14px;
+      margin: 3px;
+      background: url(http://login.console.wezhan.cn/images/verify-failed.png) no-repeat center;
+      -o-background-size: 100%;
+      background-size: 100%;
+    }
+
+    #box .verify-failed p {
+      float: left;
+      height: 20px;
+      width: 100px;
+      font-size: 12px;
+      color: #E02020;
+      line-height: 20px;
+    }
+
+    #box .verify-success {
+      display: none;
+      border: 1px solid rgba(99, 220, 140, 1);
+    }
+
+    #box .verify-success div {
+      background: rgba(99, 220, 140, 0.3);
+      padding: 7px 105px;
+      box-sizing: border-box;
+      color: rgba(99, 220, 140, 1);
+    }
+
+    #box .verify-success i {
+      float: left;
+      width: 14px;
+      height: 14px;
+      margin: 3px;
+      background: url(http://login.console.wezhan.cn/images/verify-success.png) no-repeat center;
+      -o-background-size: 100%;
+      background-size: 100%;
+    }
+
+    #box .verify-success p {
+      float: left;
+      height: 20px;
+      width: 60px;
+      font-size: 12px;
+      color: rgba(99, 220, 140, 1);
+      line-height: 20px;
+    }
+  </style>
+  <style>
+    .sign-wrap {
+      width: 400px;
+      margin: 100px auto;
+    }
+
+
+    .sign-wrap .form-row {
+      position: relative;
+      margin: 0 0 25px;
+    }
+
+
+
+
+
+    .sign-wrap .ipt-wrap {
+      position: relative;
+      display: block;
+    }
+
+    .sign-wrap .ipt {
+      width: 100%;
+      min-width: 0;
+      padding: 6px 18px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      min-height: 22px;
+      line-height: 22px;
+      border: 1px solid #F9F9F9;
+      background-color: #F9F9F9;
+      font-size: 13px;
+    }
+
+    .sign-wrap .submit-btn {
+      margin-left: 20px;
+      display: inline-block;
+      width: 76px;
+      box-sizing: content-box;
+      height: 36px;
+      line-height: 36px;
+      border: 1px #FF7414 solid;
+      font-size: 14px;
+      color: #fff;
+      letter-spacing: 1px;
+      background: #FF7414;
+      text-align: center;
+      cursor: pointer;
+    }
+
+
+
+    .tip-error {
+      display: none;
+      position: absolute;
+      left: 3px;
+      top: 45px;
+      height: 18px;
+      padding: 0 0 0 27px;
+      background: url(https://static.zhipin.com/zhipin-geek/v73/web/geek/images/icons.png) no-repeat 0 -1059px;
+      background-size: 18px auto;
+      color: #262626;
+      text-align: left;
+      line-height: 18px;
+    }
+
+    .layer-tip {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      width: 250px;
+      transform: translate3d(-50%, -50%, 0);
+      padding: 15px;
+      line-height: 20px;
+      text-align: center;
+      color: #fff;
+      border-radius: 3px;
+    }
+  </style>
+  <style>
+    .c-msgboard .header {
+      font-size: 18px;
+      margin-bottom: 14px;
+      margin-left: 20px;
+    }
+
+    .msgboard-item__label {
+      width: 20px;
+      text-align: right;
+      vertical-align: middle;
+      float: left;
+      font-size: 14px;
+      color: #606266;
+      line-height: 40px;
+      padding: 0 12px 0 0;
+      box-sizing: border-box;
+    }
+
+    .msgboard-item__label::before {
+      content: "*";
+      color: #f56c6c;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    .form-row .msgboard-item__label {
+      visibility: hidden;
+    }
+
+    .is-required .msgboard-item__label {
+      visibility: visible;
+    }
+
+    .ipt-textarea {
+      resize: none;
+    }
+
+    .ipt-wrap {
+      margin-left: 20px;
+    }
+
+    @media screen and (max-width: 991px) {
+      .sign-wrap {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .sign-wrap .submit-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="c-msgboard">
+    <header class="header">给我们留言</header>
+    <div class="sign-wrap">
+      <div class="form-row form-name ">
+        <label class="msgboard-item__label" for=""></label>
+        <div class="ipt-wrap">
+          <input type="text" class="ipt user-name" placeholder="您的姓名">
+        </div>
+        <div class="tip-error tip-pwd"></div>
+      </div>
+      <div class="form-row">
+        <label class="msgboard-item__label" for=""></label>
+        <div class="ipt-wrap">
+          <input type="text" class="ipt phone" placeholder="联系电话">
+        </div>
+      </div>
+      <div class="form-row is-required">
+        <label class="msgboard-item__label" for=""></label>
+        <div class="ipt-wrap">
+          <input type="email" class="ipt" placeholder="联系邮箱">
+        </div>
+        <div class="tip-error tip-pwd"></div>
+      </div>
+      <div class="form-row is-required">
+        <label class="msgboard-item__label" for=""></label>
+        <div class="ipt-wrap">
+          <textarea  type="text" class="ipt ipt-textarea " placeholder="留言内容"></textarea>
+        </div>
+        <div class="tip-error tip-pwd"></div>
+      </div>
+      <div class="from-row" id="box" onselectstart="return false;">
+        <div class="verify-item verify-default">
+          <div>
+            <i class="icon iconfont iconduihao"></i>
+            <p>点此进行验证</p>
+          </div>
+        </div>
+        <div class="verify-item verify-refresh">
+          <div>点击旋转图块复原图片</div>
+        </div>
+        <div class="verify-item verify-failed">
+          <div>
+            <i class="icon iconfont iconduihao"></i>
+            <p>验证失败，请重试</p>
+          </div>
+        </div>
+        <div class="verify-item verify-success">
+          <div>
+            <i class="icon iconfont iconduihao"></i>
+            <p>验证成功</p>
+          </div>
+        </div>
+        <div class="captcha-content">
+          <div class="captcha-top">
+            <span class="title">请完成验证</span>
+            <span class="close" onclick="verifyTips('close')"></span>
+            <span class="refresh" onclick="verifyTips('refresh')"></span>
+          </div>
+          <div id="captchaBox">
+
+          </div>
+        </div>
+      </div>
+      <div class="form-btn">
+        <button type="submit" class="submit-btn">提交</button>
+      </div>
+    </div>
+    <div class="layer-tip">手机号不存在</div>
+  </div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="../src/util/captcha-core.js"></script>
+<!-- <script src="/dist/index.js"></script> -->
+
+
+<script>
+  console.log(captchaCore)
+  // let msgboard = new SmartUi.MsgBoard('cy3cTWoMg2MGy3PRjVXye2YLI', 'style1')
+  // console.log(msgboard)
+  // let mode = {
+  //   "Name": "您的姓名",
+  //   "Phone": "联系电话",
+  //   "Email": "联系邮箱",
+  //   "Content": "留言内容",
+  //   "SubmitBtn": "提交"
+  // }
+  // msgboard.renderControl(mode)
+
+  //图片验证
+  var isSuccess = false
+
+  function verifyTips(value) {
+    isSuccess = false
+    $(".verify-failed").hide();
+    $(".verify-success").hide();
+    $(".verify-default").hide();
+    $(".verify-refresh").hide();
+    $(".captcha-content").hide();
+
+    if (value == 'default') {
+      $(".verify-refresh").show();
+      $(".captcha-content").show();
+      captchaCore.Get()
+    } else if (value == 'close') {
+      $(".verify-default").show();
+      $(".captcha-content").hide();
+    } else if (value == 'refresh') {
+      $(".verify-refresh").show();
+      $(".captcha-content").show();
+      captchaCore.Get()
+    } else if (value == 'failed') {
+      $(".verify-failed").show();
+      $(".captcha-content").show();
+    } else if (value == 'success') {
+      $(".verify-success").show();
+      $(".captcha-content").hide();
+      getId("tip-slider").innerHTML = '';
+      isSuccess = true
+    }
+  }
+</script>
+<script>
+  $(".phone").on('input propertychange', function (e) {
+    let $target = $(e.target)
+
+    if ($target.hasClass("user-title")) {
+      var value = event.srcElement.value.substring(0, 50);
+      $('.user-title').val(value)
+    }
+    if ($target.hasClass("ipt-textarea")) {
+      var value = event.srcElement.value.substring(0, 200);
+      $('.ipt-textarea').val(value)
+    }
+    if ($target.hasClass("user-email")) {
+      var value = event.srcElement.value.substring(0, 5);
+      $('.user-email').val(value)
+    }
+
+  })
+</script>
+
+</html>

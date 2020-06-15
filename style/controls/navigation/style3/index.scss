@@ -1,0 +1,29 @@
+.c-navigation[data-c-style=style3] {
+  .nav-list {
+    .item-warp {
+      overflow: hidden;
+    }
+  }
+
+  .menu-list {
+
+
+    &>.nav-item {
+      .item-warp :first-child {
+        margin-top: 0;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+
+      .item-warp:hover .item-link-view:first-child {
+        opacity: 1;
+        -webkit-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

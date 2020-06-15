@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #imgcontainer {
+        font-size: 0;
+      }
+      .sy_pic {
+        display: inline-block;
+        width: 25%;
+        height: 50px;
+        text-align: center;
+        overflow: hidden;
+        border: #000 solid 5px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="imgcontainer">
+      <div class="sy_pic">
+        <img
+          src="https://nwzimg.clouddream.net/newwezhan/base/control/designerImg/list/news/list5/newlist5_1.png"
+        />
+      </div>
+      <div class="sy_pic">
+        <img
+          src="https://nwzimg.clouddream.net/newwezhan/base/control/designerImg/list/news/list5/newlist5_1.png"
+        />
+      </div>
+      <div class="sy_pic">
+        <img
+          src="https://nwzimg.clouddream.net/newwezhan/base/control/designerImg/list/news/list5/newlist5_1.png"
+        />
+      </div>
+      <div class="sy_pic">
+        <img
+          src="https://nwzimg.clouddream.net/newwezhan/base/control/designerImg/list/news/list5/newlist5_1.png"
+        />
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript" language="javascript">
+  var getContainer = document.getElementById('imgcontainer')
+  var getIMG = getContainer.getElementsByTagName('img')
+  window.onload = function () {
+    for (let i = 0, j = getIMG.length; i < j; i++) {
+      changeImgSize(getIMG[i])
+    }
+  }
+  function changeImgSize(getIMG) {
+    var fw = getContainer.offsetWidth - 2 * getContainer.clientLeft
+    var fh = getContainer.offsetHeight - 2 * getContainer.clientTop
+    var iw = getIMG.width
+    var ih = getIMG.height
+    var m = iw / fw
+    var n = ih / fh
+    if (m >= 1 && n <= 1) {
+      iw = Math.ceil(iw / m)
+      ih = Math.ceil(ih / m)
+      getIMG.width = iw
+      getIMG.height = ih
+    } else if (m <= 1 && n >= 1) {
+      iw = Math.ceil(iw / n)
+      ih = Math.ceil(ih / n)
+      getIMG.width = iw
+      getIMG.height = ih
+    } else if (m >= 1 && n >= 1) {
+      getMAX = Math.max(m, n)
+      iw = Math.ceil(iw / getMAX)
+      ih = Math.ceil(ih / getMAX)
+      getIMG.width = iw
+      getIMG.height = ih
+    }
+    if (getIMG.height < fh) {
+      var getDistance = Math.floor((fh - getIMG.height) / 2)
+      getIMG.style.marginTop = getDistance.toString() + 'px'
+    }
+  }
+</script>

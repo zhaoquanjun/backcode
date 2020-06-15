@@ -1,0 +1,153 @@
+ @import '../scss/cyan_color1.scss';
+
+ @mixin bgColor($i) {
+   @if $i==1 {
+     background-color: $m1_bgColor;
+   }
+
+   @else if $i==2 {
+     background-color: $m2_bgColor;
+   }
+
+   @else if $i==3 {
+     background-color: $m3_bgColor;
+   }
+
+   @else if $i==5 {
+     background-color: $m5_bgColor;
+   }
+
+   @else if $i==6 {
+     background-color: $m6_bgColor;
+   }
+ }
+
+ @mixin hov_bgColor($i) {
+   @if $i==1 {
+     background-color: $m1_hov_bgColor;
+   }
+
+   @else if $i==2 {
+     background-color: $m2_hov_bgColor;
+   }
+
+   @else if $i==3 {
+     background-color: $m3_hov_bgColor;
+   }
+
+   @else if $i==5 {
+     background-color: $m5_hov_bgColor;
+   }
+
+   @else if $i==6 {
+     background-color: $m6_hov_bgColor;
+   }
+ }
+
+ @mixin bdColor($i) {
+   @if $i==1 {
+     border-color: $m1_bdColor;
+   }
+
+   @else if $i==2 {
+     border-color: $m2_bdColor;
+   }
+
+   @else if $i==3 {
+     border-color: $m3_bdColor;
+   }
+
+   @else if $i==5 {
+     border-color: $m5_bdColor;
+   }
+
+   @else if $i==6 {
+     border-color: $m6_bdColor;
+   }
+ }
+
+ @mixin hov_bdColor($i) {
+   @if $i==1 {
+     border-color: $m1_hov_bdColor;
+   }
+
+   @else if $i==2 {
+     border-color: $m2_hov_bdColor;
+   }
+
+   @else if $i==3 {
+     border-color: $m3_hov_bdColor;
+   }
+
+   @else if $i==5 {
+     border-color: $m5_hov_bdColor;
+   }
+
+   @else if $i==6 {
+     border-color: $m6_hov_bdColor;
+   }
+ }
+
+ @mixin ftColor($i) {
+   @if $i==1 {
+     color: $m1_ftColor;
+   }
+
+   @else if $i==2 {
+     color: $m2_ftColor;
+   }
+
+   @else if $i==3 {
+     color: $m3_ftColor;
+   }
+
+   @else if $i==5 {
+     color: $m5_ftColor;
+   }
+
+   @else if $i==6 {
+     color: $m6_ftColor;
+   }
+ }
+
+ @mixin hov_ftColor($i) {
+   @if $i==1 {
+     color: $m1_hov_ftColor;
+   }
+
+   @else if $i==2 {
+     color: $m2_hov_ftColor;
+   }
+
+   @else if $i==3 {
+     color: $m3_hov_ftColor;
+   }
+
+   @else if $i==5 {
+     color: $m5_hov_ftColor;
+   }
+
+   @else if $i==6 {
+     color: $m6_hov_ftColor;
+   }
+ }
+
+ /* tab */
+
+
+
+ @for $i from 1 through 6 {
+   @if $i !=4 {
+     .c-tab.m#{$i}_bgColor .tab-header__section .tab-header__container {
+       .tab-header__item {
+         @include bgColor($i)
+       }
+
+       .tab-header__item .selected {
+         @include bgColor($i);
+         @include ftColor($i)
+       }
+     }
+   }
+
+ }

@@ -1,0 +1,52 @@
+.c-container {
+  min-height: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 1160px;
+
+  &::before,
+  &::after {
+    content: " ";
+    display: table;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 2;
+    grid-row-end: 2;
+    clear: both;
+  }
+
+  &.sticky {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &>.container-warp {
+    width: 100%;
+
+
+
+    &>.Area {
+      width: 100%;
+      float: left;
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+  .c-container {
+    max-width: 100%;
+  }
+
+  .c-container .container-warp>.Area {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

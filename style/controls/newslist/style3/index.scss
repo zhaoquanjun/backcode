@@ -1,0 +1,34 @@
+.c-newslist[data-c-style=style3] {
+
+  .c-newslist__inner {
+    padding: 0 12px;
+
+    .c-list-item__style3 {
+      width: 100%;
+
+      .c-list-content {
+        display: flex;
+        align-items: center;
+        padding: 22px 0 14px 0;
+
+        i.iconfont {
+          margin-right: 10px;
+        }
+
+        h1 {
+          width: 80%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        p {
+          flex: none;
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {}

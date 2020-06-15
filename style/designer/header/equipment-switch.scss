@@ -1,0 +1,35 @@
+@import '../base/var_blank.scss';
+
+// equipment switch area
+.designer-equipment__area {
+  .designer-equipment--list {
+    position: relative;
+    margin: 0 auto;
+    width: 80px;
+    height: $--header-height-value;
+
+    li {
+      float: left;
+      width: 40px;
+      height: $--header-height-value;
+      line-height: $--header-height-value;
+      text-align: center;
+
+      i {
+        color: $--popup-font-color-sub;
+      }
+
+      &:hover {
+        i {
+          color: $--font-color-hover;
+        }
+      }
+    }
+
+    li.selected {
+      i {
+        color: $--font-color-selected;
+      }
+    }
+  }
+}

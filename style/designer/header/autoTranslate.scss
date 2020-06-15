@@ -1,0 +1,46 @@
+@import '../base/_var_blank.scss';
+ 
+ //  autoTranslate-switch
+  .autoTranslate-switch__area {
+    height: $--header-height-value;
+    display: none;
+    align-items: center;
+    padding-left: 30px;
+    .autoTranslate-switch__text{
+      display: inline-block;
+      color: $--usual-font-color-main;
+      font-size: $--font-size-small;
+      padding-right: 10px;
+    }
+    .autoTranslate-switch {
+      cursor: pointer;
+      width: 20px;
+      height: 8px;
+      position: relative;
+      border: 1px solid $--usual-background-content;
+      background-color: $--usual-background-content;
+      border-radius: 20px;
+      background-clip: content-box;
+      display: inline-block;
+      -webkit-appearance: none;
+      user-select: none;
+      outline: none;
+      transition: border linear 0.4s;
+      &:before{
+        content: '';
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        top: -2px;
+        left: -1px;
+        border-radius: 50%;
+        background-color: $--usual-font-color-sub;
+        transition: left 0.3s, background-color 0.4s;
+      }
+      &:checked:before {
+        left: 9px;
+        background-color: $--background-selected;
+        transition: left 0.3s, background-color 0.4s;
+      }
+    }
+  }

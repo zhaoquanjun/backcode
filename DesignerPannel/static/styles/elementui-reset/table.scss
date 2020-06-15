@@ -1,0 +1,49 @@
+.el-table {
+  border: $--popup-border-main;
+  position: relative;
+  color: $--popup-font-color-main;
+
+  thead th > .cell {
+    font-size: $--font-size-small;
+    font-weight: 500;
+    color: $--popup-font-color-sub;
+  }
+
+  thead th,
+  .el-table tbody td {
+    padding: 8px 0;
+  }
+
+  td,
+  th.is-leaf {
+    border-bottom: $--popup-border-main;
+  }
+
+  tbody .el-table__row .cell {
+    display: flex;
+    align-items: center;
+  }
+
+  .el-table__body-wrapper .el-table__row .cell span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .el-table__body tr .iconfont:hover {
+    background: $--usual-font-color-main;
+  }
+
+  .ascending .sort-caret.ascending {
+    border-bottom-color: $--color-main;
+  }
+
+  .descending .sort-caret.descending {
+    border-top-color: $--color-main;
+  }
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background: $--list-background-hover;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1386718_bnqen4jw9a9.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  </style>
+  <style>
+    .download-file {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 3000;
+
+    }
+
+    .download-pwd {
+      width: 440px;
+      height: 182px;
+
+      background: rgba(255, 255, 255, 1);
+      border-radius: 3px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      box-sizing: border-box;
+
+    }
+
+    .iconguanbi {
+      float: right;
+    }
+
+    .title {
+      margin: 15px 0;
+      line-height: 25px;
+      font-size: 14px;
+      font-weight: normal;
+      color: #262626;
+    }
+
+    .download-btn {
+      width: 80px;
+      float: right;
+      color: #fff;
+      padding: 7px 5px;
+      margin-left: 16px;
+      border: none;
+      border-radius: 2px;
+      background-color: rgba(255, 106, 0, 1);
+      flex: none;
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+    }
+
+    .input-border {
+      width: 100%;
+      line-height: 32px;
+      text-indent: 10px;
+      border: none;
+      border: 1px solid #D7D8D9;
+    }
+
+    .pwd-tip__error {
+      position: absolute;
+      font-size: 12px;
+      color: red;
+      margin-top: 5px;
+    }
+
+    .pwd-tip__error::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      vertical-align: top;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACGElEQVRYR81Xv0/VYBQ9h/IqwRUGnBQS3Y0ODBJdtSXRBBIHRunnoP+CODrq1MLoYIKJJrzqqtHBRI07JqiTDDhioq+vXPMVCtgf7/W1r7zXre0955723u/7ziV6uAJLXQVxE8AsgUmAk/tw2RFgB8AHCF42fPdtUVp2C5Rby1Ot1ohDyG2S57vFR3JEvgr4zDT3PL5Y3e6E6Sjgr6VWDPKOQM4USZyMIfgzFFk75bsrefhcAcG8egfBlTKJUxjifWPDncviyhQQ2ErXc6IvyY9IfjWa7kHPHD1MCWjb6rsAZ/ucPKIj8GO06Z47zv2fgJblrJNcqCN5zCkiz03fW4zvDwXohhshHtSZPObeEzyMGzMSoJdaGBify3Z7r6L16jAa4SW9RCMBJ/n1yb8QCWjZaovAdK9fUiVegG9m053hH8u5bpCvqpCVxYYiN9i2lSuAU5akCo6Ax8BWHwFcrkJUAftJ/4HaNp5uwvTGxLZ9d1cgpzODx8dg3FvqxpP7Pny01hFL8PcwCBhwCQbehIGtHgO4X7rQ1YBPeODz3lTjKYkWXNvfii1ns6jfK5kqBdO+0fS9C8NxGA38OD7pIzllSOIC9dUJ5zVLwiGnTGlNjjiWk3LGmba8jgMqyxFrVbmDST8dctIJH6/O8I5mscrD4ZRYKuobtd8TwdPKw2mykbV/HCXnBbiYNZ4T+NIW2RjzvddFd8x/wkvv78ZLnx0AAAAASUVORK5CYII=) no-repeat center;
+      background-size: contain;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="download-file">
+    <div class="download-pwd">
+      <div style="overflow: hidden;"><i class="iconfont iconguanbi"></i></div>
+      <h4 class="title">请输入提取码：</h4>
+      <div class="input-wrap">
+        <input class="pwd-code input-border" type="password" autocomplete="off"></input>
+        <button class="btn-small btn-bglightblue download-btn">提取文件</button>
+      </div>
+      <div class="pwd-tip__error">错误</div>
+    </div>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="/dist/index.js"></script>
+</body>
+<script>
+  let filedownload = new SmartUi.FileDownload()
+  console.log(filedownload)
+  let mode = {
+    Title: '该文件进行了加密',
+    Placeholder: '请输入下载密码',
+    PwdErrorText: "密码错误",
+    ConfirmText: "确定"
+  }
+  filedownload._render(mode)
+</script>
+
+</html>

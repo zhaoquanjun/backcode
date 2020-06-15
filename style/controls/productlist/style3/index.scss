@@ -1,0 +1,118 @@
+.c-productlist[data-c-style=style3],
+.c-productlist[data-c-style=style5] {
+  .productlist-wrap {
+    .product-list {
+      flex-wrap: wrap;
+
+      li.list-item {
+        flex: none;
+        margin-bottom: 42px;
+
+        a {
+
+          .productlist-ellipsis2 {
+            word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
+          .list-content {
+            padding: 24px 22px 29px 26px;
+          }
+        }
+
+        .price__wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 27px;
+
+          .price {
+            padding: 0;
+          }
+
+          .look-more {
+            cursor: pointer;
+            background: transparent;
+          }
+        }
+      }
+
+      li.col-item2 {
+        width: 50%;
+      }
+
+      li.col-item3 {
+        width: 33.33%;
+      }
+
+      li.col-item4 {
+        width: 25%;
+      }
+
+      li.col-item5 {
+        width: 20%;
+      }
+
+      li.col-item6 {
+        width: 16.667%;
+      }
+    }
+
+
+  }
+
+  .list-item {
+    a {
+      box-shadow: 0px 3px 17px 0px rgba(110, 58, 21, 0.19);
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 992px) {
+
+  .c-productlist[data-c-style=style3],
+  .c-productlist[data-c-style=style5] {
+    max-width: calc(100% - 3.733% - 3.733%);
+    margin-left: 3.733% !important;
+    margin-right: 3.733% !important;
+
+    .productlist-wrap {
+      .product-list {
+        flex-wrap: wrap;
+
+        a .list-content {
+          padding: 16px 8px !important;
+        }
+
+        li.col-md-item1 {
+          width: 100% !important;
+          padding: 10px;
+          margin-bottom: 10px !important;
+
+          .imgview {
+            height: 180px !important;
+          }
+        }
+
+        li.col-md-item2 {
+          width: 50% !important;
+          flex: none;
+          padding: 10px;
+          margin-bottom: 10px !important;
+
+          .imgview {
+            height: 114px !important;
+          }
+        }
+
+      }
+    }
+
+
+  }
+}

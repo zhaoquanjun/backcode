@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+</head>
+
+<body></body>
+<div id="{{_Id}}" data-c-type="{{_Name}}" class="c-map {{_SysClass}}">
+    <script type="text/javascript">
+        var positionList = [];
+        {% for point in Model.positionList %}
+        positionList.push({
+            lat: parseFloat("{{ point.lat }}"),
+            lng: parseFloat("{{ point.lng }}"),
+            title: "{{ point.title|raw }}",
+            description: "{{ point.description|raw }}",
+            isCenter: Boolean("{{ point.isCenter}}")
+        });
+        {% endfor %}
+        var currentPoint = new BMap.Point(116.402127, 39.929588);
+        var showMapTypes = Boolean("{{Model.showMapTypes}}");
+        var showToolBar = Boolean("{{Model.showToolBar}}");
+        var showScrollWheel = Boolean("{{Model.showScrollWheel}}");
+         //添加标点
+        function addMarker(map, position, positionIndex) {
+            var markerPoint = new BMap.Point(position.lat, position.lng);
+            var marker = new BMap.Marker(markerPoint);
+            var title = positionList[positionIndex].title;
+            var content = positionList[positionIndex].description;
+            marker.addEventListener("click", function () {
+                var opts = {
+                    width: 250,
+                    height: 100,
+                    title: title
+                }
+                var infoWindow = new BMap.InfoWindow(content, opts);
+                map.openInfoWindow(infoWindow, markerPoint);
+            });
+            map.addOverlay(marker);
+        }
+         //初始化
+        function initMapPoint(mapId, zoom) {
+            var map = new BMap.Map(mapId);
+            if (!zoom) zoom = 16;
+            if (positionList == null || positionList.length < 1) {
+                map.centerAndZoom(currentPoint, zoom);
+            } else {
+                for (var i = 0; i < positionList.length; i++) {
+                    var point = positionList[i];
+                    if ((point.isCenter && point.isCenter == true) || positionList.length == 1) {
+                        map.centerAndZoom(new BMap.Point(point.lat, point.lng), zoom);
+                    }
+                    addMarker(map, point, i);
+                }
+            }
+            if (showMapTypes) {
+                map.addControl(new BMap.MapTypeControl({
+                    mapTypes: [
+                        BMAP_NORMAL_MAP,
+                        BMAP_SATELLITE_MAP,
+                        BMAP_HYBRID_MAP
+                    ]
+                }));
+            }
+            if (showToolBar) {
+                var top_left_control = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_TOP_LEFT });
+                var top_left_navigation = new BMap.NavigationControl();
+                map.addControl(top_left_control);
+                map.addControl(top_left_navigation);
+            }
+            map.enableScrollWheelZoom(showScrollWheel);
+        }
+        initMapPoint("{{_Id}}", {{ Model.zoom }});
+    </script>
+</div>
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>

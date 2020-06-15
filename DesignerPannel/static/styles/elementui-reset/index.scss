@@ -1,0 +1,26 @@
+@import "./select.scss";
+@import "./radio.scss";
+@import "./checkbox.scss";
+@import "./table.scss";
+@import "./pagination.scss";
+@import "./input.scss";
+@import "./image-dialog.scss";
+@import "./pop-up/pop-up.scss";
+@import "./m-tree.scss";
+@import "./slider.scss";
+@import './collapse.scss';
+@import './background-tab.scss';
+@import './color-picker.scss';
+@import './switch.scss';
+
+.el-main {
+    padding: 0;
+}
+.el-container .el-header {
+    padding: 0;
+}
+
+.el-popover:focus{
+    outline: none !important;
+}
+

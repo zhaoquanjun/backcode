@@ -1,0 +1,12 @@
+.c-navcontainer {
+  display: flex;
+  align-items: center;
+  z-index: 500;
+  top: 0;
+
+  @media screen and (max-width: 992px) {
+    & {
+      min-height: 50px;
+    }
+  }
+}

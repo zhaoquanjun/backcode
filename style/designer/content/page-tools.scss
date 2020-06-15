@@ -1,0 +1,82 @@
+@import '../base/var_blank.scss';
+
+// tooltips
+.status-tips__area {
+  position: absolute;
+  top: 70px;
+  right: -200px;
+  padding: 15px 20px;
+  /* display: none; */
+  background: $--popup-background-main;
+  box-shadow: $--area-shadow-base;
+
+  .tips-icon {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .tips-icon.success {
+    background: url('../images/success.png') no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .tips-icon.fail {
+    background: url('../images/fail_warning.png') no-repeat center center;
+    background-size: 100% 100%;
+  }
+
+  .tips-content {
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 16px;
+    max-width: 200px;
+  }
+
+  .tool-tips__item {
+    position: relative;
+  }
+}
+
+// drag size area
+#dragSizeArea {
+  position: absolute;
+  display: none;
+  padding: 4px 6px;
+  white-space: nowrap;
+  background: $--list-background-hover;
+  box-shadow: $--area-shadow-base;
+  z-index: 39;
+  border-radius: $--border-radius-base;
+
+  p {
+    padding: 4px 0;
+    color: $--popup-font-color-main;
+    
+    span {
+      font-size: $--font-size-normal;
+      color: $--popup-font-color-main;
+    }
+  }
+}
+
+// drag position remind
+.resize_help_x, .resize_help_y {
+  background-color: $--color-main;
+  position: absolute;
+  z-index: 99;
+  display: none;
+}
+
+.resize_help_x {
+  height: 1px;
+  width: 100%;
+}
+
+.resize_help_y {
+  width: 1px;
+  height: 100%;
+}

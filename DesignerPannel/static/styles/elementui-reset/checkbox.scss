@@ -1,0 +1,11 @@
+
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-switch.is-checked .el-switch__core{
+    background-color: $--color-main;
+    border-color: $--color-main;
+ }
+ .el-checkbox__input.is-focus .el-checkbox__inner,
+ .el-checkbox__inner:hover{
+    border-color: $--color-main;
+ }

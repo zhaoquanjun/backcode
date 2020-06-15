@@ -1,0 +1,140 @@
+@import '../base/var_blank.scss';
+
+// header tool area
+.designer-tools__area {
+  .designer-tools__area--left {
+    li {
+      position: relative;
+      float: right;
+      min-width: 70px;
+      height: $--header-height-value;
+      line-height: $--header-height-value;
+      margin-right: 20px;
+      color: $--usual-font-color-main;
+
+      .designer-tools__inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        line-height: $--header-height-value;
+        font-size: $--font-size-normal;
+        text-align: center;
+      }
+
+      &:hover {
+        color: $--font-color-hover;
+
+        i,
+        div {
+          color: $--font-color-hover;
+        }
+      }
+
+      i {
+        font-size: $--font-size-big;
+        color: $--usual-font-color-main;
+      }
+
+      i.iconfont {
+        padding-right: 4px;
+      }
+    }
+
+    li.preview {
+      font-size: 0;
+
+      div {
+        font-size: $--font-size-normal;
+        display: inline-block;
+        transition: width .3s ease-in-out;
+      }
+    }
+
+    li[data-type=forward], li[data-type=backout] {
+      min-width: 20px;
+    }
+
+    li.forward {
+      margin-right: 25px;
+    }
+
+    li.backword {
+      margin-right: 10px;
+    }
+
+    li.active {
+      i,
+      div {
+        color: $--font-color-selected;
+      }
+
+      p {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    li.disabled {
+      color: $--popup-font-color-disabled;
+      cursor: $--cursor-not-allowed-style;
+
+      i {
+        color: $--popup-font-color-disabled;
+        cursor: $--cursor-not-allowed-style;
+      }
+
+      &:hover {
+        color: $--popup-font-color-disabled !important;
+
+        i, div {
+          color: $--popup-font-color-disabled !important;
+        }
+      }
+    }
+  }
+
+  .designer-tools__area--right {
+    position: relative;
+    float: right;
+
+    li {
+      width: 70px;
+      height: $--header-height-value;
+      line-height: $--header-height-value;
+      text-align: center;
+      background-color: $--panel-background-content-color;
+
+      i {
+        font-size: $--font-size-large;
+        color: $--usual-font-color-main;
+      }
+
+      &:hover {
+        color: $--font-color-hover;
+
+        i {
+          color: $--font-color-hover;
+        }
+      }
+    }
+
+    li.active {
+      i {
+        color: $--font-color-selected;
+      }
+    }
+
+    li.disabled {
+      color: $--usual-font-color-disabled;
+      cursor: $--cursor-not-allowed-style;
+
+      i {
+        color: $--usual-font-color-disabled;
+      }
+    }
+  }
+}

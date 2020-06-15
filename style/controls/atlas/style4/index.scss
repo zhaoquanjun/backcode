@@ -1,0 +1,184 @@
+.c-atlas[data-c-style=style4] {
+
+  li {
+    height: 404px;
+
+    a.linkArea {
+      height: 100% !important;
+
+      .list-space {
+        height: 100%;
+
+        .imgview {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  .atlas-list {
+    display: block;
+    zoom: 1;
+
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+      height: 0;
+      visibility: hidden;
+    }
+
+    li:nth-child(n) {
+      float: left;
+    }
+  }
+
+  .atlas-list-9 {
+    li:nth-child(5) {
+      width: 50%;
+    }
+
+    li:nth-child(n + 6) {
+      height: 202px;
+    }
+  }
+
+  .atlas-list-8 {
+    li:nth-child(5) {
+      width: 50%;
+    }
+
+    li:nth-child(n + 7) {
+      height: 202px;
+    }
+  }
+
+  .atlas-list-7 {
+    li:nth-child(5) {
+      width: 50%;
+    }
+  }
+
+  .atlas-list-6 {
+    li:nth-child(n + 3) {
+      height: 202px;
+    }
+  }
+
+  .atlas-list-5 {
+    li:nth-child(n + 4) {
+      height: 202px;
+    }
+  }
+
+  .atlas-list-4 {
+    li:nth-child(1) {
+      width: 50%;
+    }
+
+    li:nth-child(n+3) {
+      height: 202px;
+    }
+  }
+
+
+  .list-content {
+    display: none;
+    background: rgba(255, 255, 255, 1) !important;
+    width: calc(100% - 24px) !important;
+    margin: 0 12px 12px;
+
+    .title {
+      width: 100%;
+      margin-top: 24px;
+      margin-bottom: 16px;
+    }
+
+    .title-line {
+      width: 40px;
+      margin: 0 auto 24px;
+    }
+  }
+
+  li.list-item:hover .list-content {
+    display: block;
+
+    &.d-none {
+      display: none;
+    }
+  }
+
+  .ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @media screen and (max-width: 992px) {
+    padding-bottom: 0 !important;
+
+    li.list-item:hover .list-content {
+      display: none;
+    }
+
+    .atlas-list {
+
+      li.col-md-item1,
+      li.col-md-item2 {
+        padding: calc(5px / 2);
+        height: 248px;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .atlas-list-9 {
+      li:nth-child(5) {
+        width: 100%;
+      }
+
+      li:nth-child(n + 6) {
+        height: 124px;
+      }
+    }
+
+    .atlas-list-8 {
+      li:nth-child(5) {
+        width: 100%;
+      }
+
+      li:nth-child(n + 7) {
+        height: 124px;
+      }
+    }
+
+    .atlas-list-7 {
+      li:nth-child(5) {
+        width: 100%;
+      }
+    }
+
+    .atlas-list-6 {
+      li:nth-child(n + 3) {
+        height: 124px;
+      }
+    }
+
+    .atlas-list-5 {
+      li:nth-child(n + 4) {
+        height: 124px;
+      }
+    }
+
+    .atlas-list-4 {
+      li:nth-child(1) {
+        width: 100%;
+      }
+
+      li:nth-child(n+3) {
+        height: 124px;
+      }
+    }
+
+  }
+}

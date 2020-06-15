@@ -1,0 +1,51 @@
+.el-color-picker--small {
+  width: 50px;
+  height: 38px;
+
+  .el-color-picker__trigger {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    border: none;
+
+    .el-color-picker__color {
+      border: none;
+      border-radius: 4px;
+
+      .el-color-picker__color-inner {
+        border-radius: 4px;
+      }
+
+      .el-color-picker__empty {
+        display: none;
+      }
+    }
+
+    .el-color-picker__icon {
+      display: none;
+    }
+  }
+}
+
+.el-color-picker__panel {
+  .el-color-dropdown__btns {
+    .el-color-dropdown__value {
+      .el-input {
+        .el-input__inner {
+          color: $--popup-font-color-main;
+          border-color: $--popup-border-color;
+          background-color: $--popup-background-main;
+        }
+      }
+    }
+
+    :nth-child(2) {
+      color: $--color-main;
+    }
+
+    :nth-child(3):hover {
+      color: $--color-main;
+      border: 1px solid $--color-main;
+    }
+  }
+}

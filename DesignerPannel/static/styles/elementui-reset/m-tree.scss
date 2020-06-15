@@ -1,0 +1,219 @@
+.aside-tree {
+  padding-top: 8px;
+  padding-left: 16px;
+  height: 100%;
+
+  .drop-btn {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    top: 10px;
+    cursor: grab;
+
+    i {
+      font-size: $--font-size-large;
+      color: $--popup-font-color-sub;
+    }
+  }
+
+  .custom-tree-node {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    .node-label-wrap {
+      display: flex;
+      align-items: center;
+      color: $--popup-font-color-main;
+      width: 100%;
+      height: 100%;
+    }
+
+    .node-label {
+      display: block;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  .set-tree-type {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    z-index: 10;
+    border-radius: 2px;
+    text-align: center;
+
+    .iconsangedian {
+      &:hover {
+        background: $--usual-font-color-main;
+      }
+    }
+  }
+
+  .category-name-pic {
+    width: 282px;
+    height: 140px;
+    background: $--usual-font-color-main;
+    display: block;
+    position: absolute;
+    z-index: 2000;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.09);
+  }
+
+  .upload {
+    height: 200px;
+  }
+
+  .categoryPic {
+    width: 16px;
+    height: 16px;
+    padding-right: 5px;
+  }
+
+  .label-weight {
+    font-weight: 500;
+  }
+
+  .el-tree .el-tree__drop-indicator {
+    background: $--color-main !important;
+    height: 2px !important;
+    left: 0 !important;
+  }
+
+  .el-tree .el-tree-node__expand-icon.expanded {
+    color: #a1a8b1;
+  }
+
+  .el-tree .el-tree-node__content {
+    height: 40px;
+    position: relative !important;
+    background: $--usual-font-color-main;
+    cursor: auto;
+  }
+
+  .el-tree-node .el-tree-node__content:hover {
+    background: $--list-background-selected;
+  }
+
+  .el-tree-node .el-tree-node__content:hover .drop-btn {
+    display: block;
+  }
+
+  .el-tree .el-tree-node__label {
+    font-size: 12px;
+  }
+
+  .el-tree > :first-child > .el-tree-node__content:hover .set-tree-type {
+    background: transparent;
+  }
+
+  .el-tree--highlight-current
+    .el-tree-node.is-current
+    > .el-tree-node__content {
+    background: $--list-background-selected;
+    border-left: 3px solid $--color-main;
+  }
+
+  .el-tree > :first-child > .el-tree-node__content .set-tree-type,
+  .el-tree--highlight-current
+    .el-tree-node.is-current
+    > .el-tree-node__content
+    .set-tree-type {
+    background: $--list-background-selected;
+  }
+
+  .el-scrollbar {
+    height: calc(100vh - 200px);
+  }
+}
+
+.el-tree .is-current .el-tree-node__label {
+  color: $--color-main;
+}
+
+.el-tree .el-tree-node__label {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.el-tree .is-current .el-tree-node__children .el-tree-node__label {
+  color: #606266;
+  font-weight: normal;
+}
+
+.el-tree .el-tree-node__expand-icon {
+  color: #a1a8b1 !important;
+}
+
+.el-tree .el-tree-node__expand-icon.is-leaf {
+  color: transparent !important;
+}
+
+.el-tree .el-tree__empty-text  {
+  font-size: $--font-size-small;
+}
+
+.tree-handle {
+  display: none;
+  position: absolute;
+  right: -88px;
+  top: 0;
+  z-index: 1000;
+  width: 120px;
+  background: $--usual-font-color-main;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.07);
+  padding: 5px 0;
+  border-radius: 2px;
+
+  button {
+    width: 100%;
+    display: block;
+    padding: 8px 14px;
+    text-align: left;
+    font-size: 14px;
+
+    &:hover {
+      background-color: $--list-background-hover;
+    }
+  }
+}
+
+// 侧边分类title样式
+.pic-type-title {
+  box-sizing: border-box;
+  span {
+    padding-left: 20px;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: $--font-size-normal;
+    color: $--popup-font-color-main;
+    border-bottom: $--popup-border-main;
+  }
+}
+
+#content-manage {
+  .tree-aside {
+    width: 220px !important;
+    background: $--popup-background-main;
+  }
+
+  .el-dialog__body {
+    padding-top: 0;
+    padding-bottom: 38px;
+  }
+}

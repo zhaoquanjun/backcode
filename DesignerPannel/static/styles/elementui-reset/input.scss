@@ -1,0 +1,146 @@
+.el-input__inner {
+  font-size: $--font-size-small;
+  color: $--usual-font-color-main;
+  border-color: $--usual-border-color;
+  border-radius: $--border-radius-base;
+  background-color: $--panel-background-color;
+}
+
+.el-input__inner[disabled='disabled']:focus,
+.el-input__inner[disabled='disabled']:hover {
+  border-color: #f5f7fa !important;
+}
+
+.el-textarea .el-textarea__inner {
+  font-size: $--font-size-small;
+  background-color: $--panel-background-color !important;
+}
+
+.el-textarea .el-input__count {
+  color: $--usual-font-color-sub;
+  background-color: $--panel-background-color;
+}
+
+.el-input__inner:focus,
+.el-textarea__inner:focus,
+.el-select .el-input.is-focus .el-input__inner,
+.el-select .el-input__inner:focus {
+  border-color: $--color-main;
+}
+
+.el-input.is-disabled .el-input__inner:focus {
+  border-color: #e4e7ed;
+}
+
+.el-input .el-input__inner,
+.el-button,
+.el-input-group__append,
+.el-input-group__prepend {
+  border-radius: $--border-radius-base;
+}
+
+.el-input-number--small .el-input--small .el-input__inner,
+.el-select--small .el-input--small .el-input__inner {
+  font-size: $--font-size-small;
+  height: 40px;
+  line-height: 40px;
+}
+.el-input--small .el-input__inner:hover,
+.el-textarea .el-textarea__inner:hover,
+.el-input-number--small .el-input--small .el-input__inner:hover,
+.el-select--small .el-input--small .el-input__inner:hover {
+  border-color: $--color-main;
+}
+.el-input--small .el-input__inner:focus,
+.el-textarea .el-textarea__inner:focus,
+.el-input-number--small .el-input--small .el-input__inner:focus,
+.el-select--small .el-input--small .el-input__inner:focus {
+  border-color: $--color-main;
+}
+
+.el-input {
+  .el-input__inner {
+    &:hover {
+      border-color: $--background-hover;
+    }
+  }
+}
+
+.el-input-number--small {
+  .el-input-number__decrease,
+  .el-input-number__increase {
+    position: absolute;
+    display: none;
+    width: 20px;
+    height: 20px !important;
+    line-height: 20px !important;
+    border-color: $--panel-background-content-color;
+    background-color: $--panel-background-content-color;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $--usual-font-color-main;
+      transform: translate(-46%, -46%) scale(0.8) !important;
+
+      &:hover {
+        color: $--background-hover;
+      }
+    }
+  }
+
+  .el-input-number__decrease.is-disabled,
+  .el-input-number__increase.is-disabled {
+    i {
+      &:hover {
+        color: $--usual-font-color-main;
+      }
+    }
+  }
+
+  .el-input-number__decrease {
+    bottom: 1px;
+    right: 1px;
+    border-radius: 0 0 2px !important;
+    border-left-color: transparent !important;
+  }
+
+  .el-input-number__increase {
+    top: 1px;
+    right: 1px;
+    border-radius: 0 2px 2px 0 !important;
+    border-left: 1px solid transparent !important;
+    border-bottom-color: transparent !important;
+  }
+
+  .el-input--small {
+    .el-input__inner {
+      padding-left: 8px !important;
+      padding-right: 16px !important;
+      text-align: left;
+      cursor: auto;
+    }
+
+    &:hover {
+      i.el-icon-arrow-up {
+        color: $--background-hover;
+      }
+    }
+  }
+
+  &:hover {
+    .el-input-number__decrease,
+    .el-input-number__increase {
+      display: block;
+    }
+  }
+}
+.el-input-number__decrease:hover:not(.is-disabled)
+  ~ .el-input
+  .el-input__inner:not(.is-disabled),
+.el-input-number__increase:hover:not(.is-disabled)
+  ~ .el-input
+  .el-input__inner:not(.is-disabled) {
+  border-color: $--usual-border-color;
+}

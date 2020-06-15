@@ -1,0 +1,72 @@
+.c-atlas[data-c-style=style6] {
+  .atlas-list {
+    padding-top: 40px;
+
+    li.list-item {
+      padding-top: 40px;
+
+      &:hover {
+        .linkArea {
+          box-shadow: 0px 3px 10px 0px rgba(53, 53, 52, 0.19);
+        }
+      }
+
+      &:nth-of-type(even) {
+        transform: translateY(-40px);
+      }
+
+      .title {
+        padding-right: 5px;
+      }
+
+      .view-more {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+        padding-bottom: 32px;
+        background: transparent;
+      }
+
+      .icon-btn {
+        i {
+          font-weight: 900;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    & {
+      .atlas-list {
+        li.list-item {
+          padding-top: 20px;
+          padding: 20px 7px;
+
+          &:hover {
+            .linkArea {
+              box-shadow: none;
+            }
+          }
+
+          .list-space .imgview {
+            height: 206px;
+          }
+
+          .view-more {
+            padding: 0 10px;
+            padding-bottom: 16px;
+
+          }
+
+        }
+
+        li.col-md-item2 {
+          margin-bottom: 0;
+        }
+
+      }
+    }
+  }
+}

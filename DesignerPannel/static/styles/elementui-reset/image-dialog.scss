@@ -1,0 +1,111 @@
+/* 查看大图 弹出层 */
+#img-list-dialog {
+  .myCarousel {
+    overflow-x: visible;
+  }
+  .myCarousel .el-carousel__arrow--left {
+    position: absolute;
+    left: -50px;
+  }
+  .myCarousel .el-carousel__arrow--right {
+    position: absolute;
+    right: -50px;
+  }
+  .left-prev,
+  .right-next {
+    opacity: 0;
+  }
+  .el-dialog {
+    background: transparent;
+    box-shadow: none;
+    height: 100%;
+    width: 100vh;
+    margin-top: 0 !important;
+  }
+  .el-dialog__body {
+    text-align: center;
+    height: 100%;
+  }
+  .el-carousel--horizontal {
+    height: 100%;
+  }
+  
+  .el-carousel__arrow--right,
+  .el-carousel__arrow--left {
+    background: none;
+  }
+  .left-prev,
+  .right-next {
+    width: 80px;
+  }
+  .right-next {
+    margin-right: -10px;
+  }
+  .left-prev {
+    margin-left: -10px;
+  }
+  .el-carousel__arrow i {
+    font-size: 40px;
+    color: $--usual-font-color-main;
+  }
+  .el-carousel__container {
+    height: 100%;
+  }
+  .el-carousel__item.is-animating {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+  }
+  .el-carousel__item.is-animating h3 {
+    height: calc(100% - 60px);
+    display: flex;
+    align-items: center;
+  }
+  .dislog-footer {
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 15px;
+    z-index: 100;
+  }
+  .el-dialog__wrapper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .el-dialog__wrapper::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  .dislog-footer span {
+    padding: 0 20px;
+    color: $--usual-font-color-main;
+    vertical-align: top;
+  }
+  .v-modal {
+    opacity: 0.8;
+  }
+}
+
+.el-dialog__header {
+  span {
+    font-size: $--font-size-normal;
+    color: $--popup-font-color-main;
+
+    i {
+      font-size: $--font-size-normal;
+      color: $--popup-font-color-auxiliary;
+    }
+  }
+  .el-dialog__headerbtn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    z-index: 10000;
+    .el-dialog__close {
+      color: $--popup-font-color-main;
+      font-size: 16px;
+    }
+  }
+}

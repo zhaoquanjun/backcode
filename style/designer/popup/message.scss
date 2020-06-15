@@ -1,0 +1,55 @@
+@import '../base/var_blank.scss';
+
+
+// tips when width is not enough 
+#designerWidthTips {
+  box-sizing: border-box;
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  display: none;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 6px 16px;
+  border-radius: 3px;
+  background-color: $-font-color-warning;
+  color: $--usual-font-color-main;
+  box-shadow: $--area-shadow-base;
+
+  &::before {
+    display: block;
+    float: left;
+    margin-right: 10px;
+    content: '';
+    width: 14px;
+    height: 14px;
+    background: url('../images/fail_warning.png') no-repeat center center;
+    background-size: 100% 100%;
+  }
+}
+
+// popup 通用弹窗
+.dialog-outer__section {
+  .dialog-header__area {
+    p {
+      color: $--popup-font-color-main;
+    }
+  }
+
+  .dialog-content__area {
+    color: $--popup-font-color-main;
+
+    p:last-of-type {
+      color: $--popup-font-color-sub;
+    }
+  }
+
+  .dialog-footer__area.dialog-footer__btn--ok {
+    background: $--color-main;
+  }
+
+  .dialog-footer__area.dialog-footer__btn--cancle {
+    color: $--color-main;
+    border: 1px solid $--color-main;
+  }
+}

@@ -1,0 +1,71 @@
+@import '../base/var_blank.scss';
+
+// designer content area
+.designer-content__area {
+  position: relative;
+  margin: 35px auto 76px;
+  max-width: 1490px;
+  width: 100%;
+  overflow: hidden;
+  transform: translateX(60px);
+  transition: all .3s;
+
+  #site-canvas {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    user-select: none;
+
+    // iframe area
+    iframe {
+      position: relative;
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      transform-style: preserve-3d;
+      pointer-events: auto;
+      border: none;
+      background: #fff;
+    }
+  }
+
+  #emptyPage {
+    position: absolute;
+    top: 32px;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: calc(100% - 32px);
+
+    .empty-page__icon {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: inline-block;
+      width: 250px;
+
+      img {
+        width: 100%;
+      }
+
+      .empty-page__tips {
+        margin-top: 16px;
+        font-size: 14px;
+        text-align: center;
+        color: $--usual-font-color-auxiliary;
+        cursor: $--cursor-pointer-style;
+
+        #emptyCreatePage {
+          color: $--color-main;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+

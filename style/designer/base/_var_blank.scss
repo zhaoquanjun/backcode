@@ -1,0 +1,100 @@
+// Main Color
+$--color-main: #FE6A00;
+
+// Font Family
+$--font-family-base: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial !default;
+
+// Font Size
+$--font-size-small: 12px !default;
+$--font-size-normal: 14px !default;
+$--font-size-big: 16px !default;
+$--font-size-large: 18px !default;
+
+// Common Color
+$-font-color-danger: #FB4D68 !default;
+$-font-color-warning: #FE9837 !default;
+$-font-color-success: #23CD5D !default;
+
+// Usual Font Color
+$--usual-font-color-main: #FFFFFF !default;
+$--usual-font-color-sub: #9F9F9F !default;
+$--usual-font-color-auxiliary: #262626 !default;
+$--usual-font-color-disabled: #D7D8D9 !default;
+$--font-color-hover: #FF974C !default;
+$--font-color-selected: #FE6A00 !default;
+
+// Popup Font Color
+$--popup-font-color-main: #262626 !default;
+$--popup-font-color-sub: #9F9F9F !default;
+$--popup-font-color-auxiliary: #FFFFFF !default;
+$--popup-font-color-disabled: #596368 !default;
+
+// Border
+$--border-size-base: 1px !default;
+$--border-style-base: solid !default;
+$--border-radius-base: 2px !default;
+$--border-radius-circle: 50% !default;
+$--usual-border-color: #596368 !default;
+$--popup-border-color: #D7D8D9 !default;
+$--usual-border-main: $--border-size-base $--border-style-base $--usual-border-color !default;
+$--popup-border-main: $--border-size-base $--border-style-base $--popup-border-color !default;
+$--panel-border-main: $--border-size-base $--border-style-base $--usual-border-color !default;
+
+// Common Background Color Hover Selected
+$--background-hover: #FF974C !default;
+$--background-selected: #FE6A00 !default;
+$--list-background-hover: #F9F9F9 !default;
+$--list-background-selected: #F4F5F6 !default;
+
+// Usual Background Color
+$--usual-background-header: #373D41 !default;
+$--usual-background-content: #1F2325 !default;
+$--usual-background-nav: #373D41 !default;
+$--usual-background-subnav: #41494E !default;
+$--usual-background-listnav: #373D41 !default;
+$--usual-background-prev: #FFFFFF !default;
+$--usual-background-auxiliary: #FFFFFF !default;
+$--panel-background-color: #373D41 !default;
+$--panel-background-content-color: #41494E !default;
+$--panel-background-block-color: #596368 !default;
+
+// Popup Background Color
+$--popup-background-main: #FFFFFF !default;
+$--popup-background-auxiliary: #e9f0f4 !default;
+$--popup-background-mask: rgba(0, 0, 0, .75) !default;
+
+// Shadow Area
+$--area-shadow-base: 0 2px 19px rgba(0, 0, 0, .19) !default;
+
+// Icon Area
+$--icon-size-normal: 16px !default;
+$--icon-size-small: 14px !default;
+$--icon-size-mini: 12px !default;
+
+
+// Designer Header Size
+$--header-height-value: 50px;
+$--header-logo-size: 24px;
+
+// Designer Nav Size
+$--nav-first-level-width-value: 60px;
+$--nav-second-level-width-value: 90px;
+$--nav-third-level-width-value: 300px;
+$--nav-first-level-icon-size: 20px;
+$--nav-second-level-icon-size: 18px;
+
+// Cursor Style
+$--cursor-pointer-style: pointer;
+$--cursor-not-allowed-style: not-allowed;
+$--cursor-grab-style: grab;
+$--cursor-grabbing-style: grabbing; // 拖拽中
+$--cursor-nwse-style: nwse-resize; // 左上右下拖拽
+$--cursor-nwse-style: ew-resize; // 左右拖拽
+$--cursor-nwse-style: ns-resize; // 上下拖拽
+
+
+// Beautify
+$--ppopup-font-disabled-beautify: #656565 !default;
+$--popup-border-line-beautify: #3F3F3F !default;
+$--popup-background-block-beautify: #4E4E4E !default;
+$--popup-background-main-beautify: #FFFFFF !default;

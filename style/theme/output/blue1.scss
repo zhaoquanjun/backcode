@@ -1,0 +1,53 @@
+@import '../scss/blue_color1.scss';
+
+/* tab */
+.c-tab.m1_bgColor .tab-header__section .tab-header__container {
+  .tab-header__item {
+    background-color: $m1_bgColor;
+  }
+
+  .tab-header__item .selected {
+    background-color: $m1_bgColor;
+  }
+}
+
+.c-tab.m2_bgColor .tab-header__section .tab-header__container {
+  .tab-header__item {
+    background-color: $m2_bgColor;
+  }
+
+  .tab-header__item .selected {
+    background-color: $m2_bgColor;
+  }
+}
+
+.c-tab.m3_bgColor .tab-header__section .tab-header__container {
+  .tab-header__item {
+    background-color: $m3_bgColor;
+  }
+
+  .tab-header__item .selected {
+    background-color: $m3_bgColor;
+  }
+}
+
+
+.c-tab.m5_bgColor .tab-header__section .tab-header__container {
+  .tab-header__item {
+    background-color: $m5_bgColor;
+  }
+
+  .tab-header__item .selected {
+    background-color: $m5_bgColor;
+  }
+}
+
+.c-tab.m6_bgColor .tab-header__section .tab-header__container {
+  .tab-header__item {
+    background-color: $m6_bgColor;
+  }
+
+  .tab-header__item .selected {
+    background-color: $m6_bgColor;
+  }
+}

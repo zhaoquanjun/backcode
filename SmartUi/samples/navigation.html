@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>导航控件</title>
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1386718_eg2nq254a86.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #262626;
+    }
+
+
+    .navigation {
+      display: inline-block;
+    }
+
+    .navigation .container {
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .navigation .nav-list {
+      display: inline-block;
+      vertical-align: top;
+      height: 100%;
+      box-sizing: border-box;
+      font-size: 0;
+    }
+
+    .navigation .nav-list .nav-item {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      min-width: 80px;
+      max-width: 80px;
+      /* height: 50px; */
+      line-height: 50px;
+      text-align: center;
+      font-size: 14px;
+      background: #0595E6;
+      padding: 0 5px;
+      vertical-align: top;
+     
+    }
+    .sliding{
+      opacity: 0;
+      position: absolute;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: red;
+
+    }
+    .navigation .nav-list .nav-item:hover .sliding{
+      opacity: 1;
+      left: 0;
+      transition:  all 0.3s ease;
+    }
+    .navigation .nav-list .active {
+
+      background: rgba(25, 217, 248, 1)
+    }
+
+    .navigation .nav-list .nav-item a {
+      display: block;
+      color: #fff;
+      padding: 0 8px;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .navigation .nav-list .nav-item a:hover {
+      color: rgba(25, 217, 248, 1)
+    }
+
+    .navigation .nav-list .active a:hover {
+      color: #0595E6;
+    }
+
+
+    .navigation .sub-list{
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      top: 50px;
+    }
+    .navigation .sub-list .nav-item {
+      display: block;
+    }
+    .navigation .nav-list-more {
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      top: 50px;
+    }
+    .navigation .nav-list-more .sub-list {
+      position: absolute;
+      left: 80px;
+      height: auto;
+      width: 100%;
+    }
+
+    .navigation .nav-list-more .nav-item {
+      display: block;
+    }
+
+    @media screen and (max-width: 750px) {
+
+
+      .navigation .header-mask {
+        background: rgba(38, 38, 38, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+      }
+
+      .navigation .header-mask.active {
+        opacity: 1;
+      }
+
+      .navigation .container {
+        position: fixed;
+        top: 0;
+        background: #fff;
+        right: 0;
+        z-index: 1;
+        width: 0;
+        height: 100%;
+        transition: width 0.2s linear;
+      }
+
+      .navigation .container.active {
+        width: 80%;
+      }
+
+      .navigation .nav-wrap {
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        height: calc(100vh - 50px);
+        overflow: hidden;
+        overflow-y: scroll;
+      }
+
+      .navigation .nav-list {
+        display: block;
+        height: auto;
+      }
+
+      .navigation .nav-list .nav-item {
+        display: block;
+        text-align: left;
+        max-width: 100%;
+      }
+      .navigation .sub-list,
+      .navigation .nav-list-more,
+      .navigation .nav-list-more .sub-list {
+        position: relative;
+        top: 0;
+      }
+      .navigation .sub-list,
+      .navigation .nav-list-more .sub-list {
+        left:0
+      }
+      .navigation .sub-list,
+      .navigation .nav-list-more .sub-list {
+        padding-left: 30px;
+      }
+      .navigation .nav-list .nav-item a {
+        padding: 0 25px;
+      }
+
+      .navigation .mb-nav-icon {
+        position: absolute;
+        top: 13px;
+        right: 14px;
+        width: 16px;
+        height: 16px;
+        padding: 9px;
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAgCAYAAACVU7GwAAAAmUlEQVRYR+2XQQ2AMBRD+x0gAA8QEIAErOAEK0hBAjgABSUsXLj1suQfunN/0rw1f12QXACsyHEOAGOQ3ADMOTwVF+1rqgHQJzF1RcQeScz8bNiUeismZVIqAVXnTJmUSkDVlUyRnNSByrq7vH1ZW0KmPnUCGLwS1DyalEmpBFSdM2VSKgFV50zJpL5ve6cOVNa5uqiAS3V5AL+IKpZTanPaAAAAAElFTkSuQmCC") no-repeat center;
+        background-size: 40%;
+        z-index: 100;
+        background-color: #0595E6;
+      }
+
+      .navigation .mb-nav-icon.active {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABOElEQVRYR9WXYXUCMRCEZxzgoBaQUBzUQVsHrZLiAFAAEpBQCzjAwfalL3fvoMllJ81xcD/vJTNfstlNlpj5Y/A3swWAVwAnkocpmczsBcATgB3JcwfwAeArGr+T3E4BYWZvADZR+5PkugMIVPuBaXOIK/NgtSJ5/AWIYRjShV/NIBLmvXYPMBXEmHnwvABoDVEyTwK0gvCYZwH+C+E1HwWohVDMiwAqhGruAvBC1Ji7AUoQteYSQA4i1rGuvMoF7E8dKN0BidUOp8jVUwbI7IS88o768QBmDUHqtN/sEI6l2uRp6DHwjEllWPEQKsLKWFcW1Aiqc7I7oAoNt1eZmwRQBHKV06txX08yL3XpvlDCcR/P8tguzdeYmNnsrVloTkNn9B3aJSXG6lgzewawBLDtm1NVpOX4H0eCEDAzCYP3AAAAAElFTkSuQmCC") no-repeat center;
+        background-color: #0595E6;
+        background-size: 40%;
+      }
+
+    }
+  </style>
+  <style>
+    .ellipsis {
+      display: block;
+      overflow: hidden;
+      /*超出部分隐藏*/
+      text-overflow: ellipsis;
+      /* 超出部分显示省略号 */
+      white-space: nowrap;
+      /*规定段落中的文本不进行换行 */
+    }
+    .dropdown-select .iconicon-des-Arrow{
+      display: flex;
+      align-items: center;
+      transform: rotate(270deg);
+      color: #fff;
+    }
+    .navigation .sub-list{
+      height: 0;
+      overflow: hidden;
+    }
+    .nav-list .nav-item:hover .sub-list{
+      height: auto;
+    }
+    
+  
+  </style>
+</head>
+
+<body>
+  <div class="navigation" data-ride="navigation" id="navigation">
+    <div class="container">
+      <div class="nav-wrap">
+        <ul class="nav-list ">
+          <li class="nav-item active">
+            <a class="ellipsis" href="javascript:;">首页</a>
+            <div class="sliding"></div>
+          </li>
+          <li class="nav-item ">
+            <a class="dropdown-select" style=" display: flex;
+            align-items: center;"> 
+              <span class="ellipsis" href="javascript:;">关关于我们于我们</span>
+              <i class="iconfont iconicon-des-Arrow"></i>
+            </a>
+            <a class="dropdown-select" style=" display: flex;
+            align-items: center;"> 
+              <span class="ellipsis" href="javascript:;">关关于我们于我们</span>
+              <i class="iconfont iconicon-des-Arrow"></i>
+            </a>
+            <div class="sliding"></div>
+            <ul class="nav-list  sub-list">
+              <li class="nav-item "><a class="ellipsis" href="javascript:;">首页sub</a></li>
+              <li class="nav-item"><a class="ellipsis" href="javascript:;">关于我们sub</a></li>
+              <li class="nav-item"><a class="ellipsis" href="javascript:;">新闻列表sub</a></li>
+              <li class="nav-item"><a class="ellipsis" href="javascript:;">公司产品sub</a></li>
+              <li class="nav-item "><a class="ellipsis" href="javascript:;">联系我们sub</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+              <span class="dropdown-select" style="    display: flex;
+              align-items: center;"> 
+                <a class="ellipsis" href="javascript:;">关于我们</a>
+                <i class="iconfont iconicon-des-Arrow"></i>
+              </span>
+              
+          </li>
+          <li class="nav-item">
+              <span class="dropdown-select" style="    display: flex;
+              align-items: center;"> 
+                <a class="ellipsis" href="javascript:;">关于我们</a>
+                <i class="iconfont iconicon-des-Arrow"></i>
+              </span>
+              <div class="sliding"></div>
+          </li>
+          <li class="nav-item "> <span class="dropdown-select" style="    display: flex;
+            align-items: center;"> 
+              <a class="ellipsis" href="javascript:;">关于我们</a>
+            </span>
+            <div class="sliding"></div>
+          </li>
+          <li class="nav-item load-more"><a class="ellipsis" href="javascript:;">更多</a></li>
+        </ul>
+        <ul class="nav-list nav-list-more more-stair" style="display:none">
+          <li class="nav-item ">
+            <a class="ellipsis" href="javascript:;">首页more</a>
+            <ul class="nav-list  sub-list">
+              <li class="nav-item "><a class="ellipsis" href="javascript:;">首页sub</a></li>
+              <li class="nav-item"><a class="ellipsis" href="javascript:;">关于我们sub</a></li>
+              <li class="nav-item"><a class="ellipsis" href="javascript:;">新闻列表sub</a></li>
+              <li class="nav-item"><a class="ellipsis" href="javascript:;">公司产品sub</a></li>
+              <li class="nav-item "><a class="ellipsis" href="javascript:;">联系我们sub</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="ellipsis" href="javascript:;">关于我们more</a></li>
+          <li class="nav-item"><a class="ellipsis" href="javascript:;">新闻列表more</a></li>
+          <li class="nav-item"><a class="ellipsis" href="javascript:;">公司产品more</a></li>
+          <li class="nav-item"><a class="ellipsis" href="javascript:;">联系我们more</a></li>
+          <li class="nav-item"><a class="ellipsis" href="javascript:;">更多more</a></li>
+        </ul>
+
+      </div>
+    </div>
+
+    <div class="mb-nav-icon" id="drapNav"></div>
+    <div class="header-mask"></div>
+  </div>
+
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="/dist/index.js"></script>
+<script>
+  $(function () {
+
+
+    // $('#navigation').navigation();
+    $("#drapNav").click(function () {
+      $(".container,.header-mask,.mb-nav-icon").toggleClass("active");
+    })
+
+  })
+</script>

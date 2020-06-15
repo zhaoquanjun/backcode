@@ -1,0 +1,28 @@
+.c-button {
+  padding: 0 10px;
+  border: 0;
+  text-decoration: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+
+  span {
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0px 4px rgba(23, 141, 247, 0.2);
+      user-select: text;
+    }
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+  .c-button {
+    max-width: calc(100% - 3.733% - 3.733%) !important;
+    margin-left: 3.733% !important;
+    margin-right: 3.733% !important;
+  }
+}

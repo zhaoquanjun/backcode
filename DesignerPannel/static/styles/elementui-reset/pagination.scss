@@ -1,0 +1,106 @@
+.el-pagination {
+  &.is-background {
+    text-align: right;
+    .el-pager {
+      li {
+        min-width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin: 0 1px;
+        border-color: $--popup-border-color;
+        background-color: $--popup-background-main;
+
+        &:not(.disabled) {
+          &:hover {
+            color: $--color-main;
+          }
+
+          &.active {
+            border: 1px solid $--color-main;
+            background-color: $--color-main;
+            color: $--usual-font-color-main;
+          }
+        }
+      }
+    }
+
+    .btn-next,
+    .btn-prev {
+      margin: 0;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      background: $--usual-font-color-main;
+      min-width: 30px;
+    }
+  }
+
+  .el-pagination__sizes {
+    .el-select {
+      .el-input {
+        width: 86px;
+        .el-input__inner {
+          color: $--popup-font-color-main;
+          border-color: $--popup-border-color;
+          background-color: $--popup-background-main;
+        }
+      }
+    }
+
+    .el-input {
+      .el-input__inner:hover {
+        border-color: $--color-main;
+      }
+    }
+  }
+
+  .el-select .el-input {
+    width: 60px;
+  }
+
+  .el-input__inner {
+    height: 32px;
+  }
+
+  .el-pagination__jump {
+    margin-left: 23px;
+  }
+
+  .el-pager {
+    border-left: none;
+    border-right: none;
+    box-sizing: border-box;
+
+    li {
+      font-weight: 500;
+      color: $--popup-font-color-main;
+      background-color: $--usual-font-color-main;
+      height: 36px;
+      line-height: 36px;
+      font-size: $--font-size-small;
+      margin: 0;
+      border-radius: 0;
+      border: $--popup-border-main;
+    }
+  }
+
+  .btn-prev,
+  .btn-next {
+    border: $--popup-border-main;
+  }
+
+  .btn-next {
+    border-left: none;
+  }
+
+  button:hover {
+    color: $--font-color-hover;
+  }
+
+  .el-pagination__total {
+    color: $--popup-font-color-sub;
+    margin: 0;
+    height: 32px !important;
+    line-height: 32px !important;
+  }
+}

@@ -1,0 +1,34 @@
+.c-image {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.c-image-circle {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+
+  .c-image__circle--inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+  }
+
+  img:last-of-type {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .c-image {
+    max-width: calc(100% - 3.733% - 3.733%) !important;
+    margin-left: 3.733% !important;
+    margin-right: 3.733% !important;
+  }
+}

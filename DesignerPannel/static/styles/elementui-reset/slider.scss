@@ -1,0 +1,41 @@
+// 滑块
+.el-slider {
+  .el-slider__runway {
+    height: 2px;
+    background-color: $--panel-background-block-color;
+
+    .el-slider__bar {
+      height: 2px;
+      background: $--background-selected;
+    }
+  }
+
+  .el-slider__button-wrapper {
+    top: -17px;
+    z-index: 10;
+    .el-slider__button {
+      width: 24px;
+      height: 24px;
+      background: $--panel-background-content-color;
+      border: 1px solid;
+      border-color: $--color-main;
+      position: relative;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        vertical-align: middle;
+        background-color: $--color-main;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
+    }
+  }
+}

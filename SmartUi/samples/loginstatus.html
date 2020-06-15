@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1386718_eg2nq254a86.css">
+    <title>登录状态</title>
+    <style>
+        .login-status {
+            display: inline-block;
+        }
+
+        .site-nav-sigin {
+            display: none;
+            /* display: inline-block; */
+
+        }
+
+        .login-status .site-nav-sigin a {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .login-status .site-nav-sigin>:first-child {
+            margin-right: 20px;
+        }
+
+        .login-status .site-nav-sigin .btn {
+            cursor: pointer;
+            display: inline-block;
+            width: 80px;
+            height: 36px;
+            line-height: 36px;
+            border: none;
+            border: 1px solid rgba(1, 128, 254, 1);
+            font-size: 14px;
+        }
+
+        .login-status .site-nav-sigin .register {
+            color: rgba(1, 128, 254, 1);
+        }
+
+        .login-status .site-nav-sigin .login {
+            color: #fff;
+            background: rgba(1, 128, 254, 1);
+        }
+
+        .login-status .site-nav-user {
+            cursor: pointer;
+          
+            position: relative;
+
+        }
+
+        .login-status .site-nav-user .mobile {
+            font-size: 14px;
+            color: rgba(69, 74, 91, 1);
+        }
+
+        .login-status .site-nav-user .dropdown-arrow {
+            display: inline-block;
+            transform: rotate(90deg);
+            transition: all 0.3s ease;
+            margin-left: 8px;
+            font-size: 12px;
+        }
+
+        .login-status .site-nav-user:hover .dropdown-arrow-open{
+            transform: rotate(270deg);
+            transition: all 0.3s ease;
+        }   
+        .login-status  .login-info:hover .dropdown-menu{
+             display: block;
+        }    
+        .login-status .dropdown-menu {
+            display: none;
+            position: absolute;
+            width: 112px;
+            padding: 13px 0;
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0px 1px 4px 0px rgba(210, 210, 210, 0.5);
+            border-radius: 2px 0px 2px 0px;
+            z-index: 100;
+        }
+
+        .login-status .dropdown-menu::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -16px;
+            right: 48px;
+            border-width: 8px;
+            border-style: solid;
+            z-index: 101;
+            border-color: transparent transparent #fff transparent;
+        }
+
+        .login-status .dropdown-menu span {
+            cursor: pointer;
+            display: block;
+            padding: 6px 0;
+            line-height: 20px;
+            text-align: center;
+            color: rgba(38, 38, 38, 1);
+        }
+
+        .login-status .dropdown-menu span:hover {
+            background: rgba(248, 250, 252, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-status">
+        <div class="site-nav-sign">
+            <a href="javascript:;"><button class="btn register">注册</button></a>
+            <a href="javascript:;"><button class="btn login">登录</button></a>
+        </div>
+        <div class="site-nav-user">
+            <div class="login-info">
+                <a href="">
+                    <span class="iconfont iconicon-des-14"></s>
+                    <span class="mobile">1300000000</span>
+                    <span class="iconfont iconicon-des-Arrow dropdown-arrow dropdown-arrow-open"></span>
+                </a>
+                <div class="dropdown-menu">
+                        <a href="javascript:;"><span>账号信息</span></a>
+                        <a href="javascript:;"><span>退出登录</span></a>
+                       
+                    </div>
+            </div>
+           
+        </div>
+    </div>
+</body>
+
+</html>

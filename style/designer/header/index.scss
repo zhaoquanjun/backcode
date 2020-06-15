@@ -1,0 +1,13 @@
+@import './logo.scss';
+@import './page-manage.scss';
+@import './equipment-switch.scss';
+@import './page-tools.scss';
+@import './autoTranslate.scss';
+
+
+.designer-header__section {
+  position: relative;
+  height: $--header-height-value;
+  background: $--panel-background-color;
+  z-index: 19;
+}

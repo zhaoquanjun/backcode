@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .scroll-list {
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+
+    .product-list {
+      width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+    }
+
+    .product-list li {
+      width: 50%;
+      flex: none;
+    }
+
+    .product-list li:nth-of-type(odd) {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scroll-list">
+    <ul class="product-list">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+  </div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  let items = $(".product-list li")
+  let step = items.length / 2
+  let count = 0
+  setInterval(() => {
+    count++
+    if (count >= step) {
+      count = 1
+    }
+    $(".product-list").animate({
+      marginLeft: -(100 * count) + '%'
+    })
+  }, 2000)
+</script>
+
+</html>

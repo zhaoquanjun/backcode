@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1386718_eg2nq254a86.css">
+
+  <style>
+    @media screen and (max-width: 991px) {
+      .sign-wrap {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+    }
+
+    .sign-wrap .form-row {
+      position: relative;
+      margin: 0 0 25px;
+    }
+
+    .sign-wrap .ipt-wrap {
+      position: relative;
+      display: block;
+    }
+
+    .sign-wrap .ipt {
+      width: 100%;
+      min-width: 0;
+      padding: 9px 18px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      min-height: 22px;
+      line-height: 22px;
+      border: 1px solid #DBE6E9;
+      font-size: 13px;
+    }
+
+
+    .sign-wrap .form-btn {
+      font-size: 0;
+      text-align: right;
+    }
+
+    .sign-wrap .form-btn .signin-btn {
+      width: 76px;
+      height: 32px;
+      line-height: 32px;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      background: transparent;
+      font-size: 12px;
+      border: 1px solid rgba(255, 107, 0, 1);
+    }
+
+    .sign-wrap .form-btn .signin-btn.cancel {
+      color: rgba(255, 107, 0, 1);
+
+    }
+
+    .sign-wrap .form-btn .signin-btn.submit {
+      border-color: transparent;
+      background: rgba(255, 107, 0, 1);
+      color: #fff;
+      margin-left: 15px;
+
+    }
+
+    .sign-wrap .tip-error {
+      display: none;
+      position: absolute;
+      left: 3px;
+      top: 45px;
+      height: 18px;
+      padding: 0 0 0 27px;
+      background: url(https://static.zhipin.com/zhipin-geek/v73/web/geek/images/icons.png) no-repeat 0 -1059px;
+      background-size: 18px auto;
+      color: #262626;
+      text-align: left;
+      line-height: 18px;
+    }
+
+    .sign-wrap .layer-tip {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      width: 250px;
+      transform: translate3d(-50%, -50%, 0);
+      padding: 15px;
+      line-height: 20px;
+      text-align: center;
+      color: #fff;
+      border-radius: 3px;
+    }
+
+
+
+
+    .sign-wrap .btn-sms {
+      cursor: pointer;
+      position: absolute;
+      right: 1px;
+      top: 3px;
+      font-size: 14px;
+      background-color: #fff;
+      background-position: 0 -356px;
+      min-width: 104px;
+      color: #0180FE;
+      border: 0;
+      box-sizing: content-box;
+      height: 36px;
+      line-height: 36px;
+    }
+  </style>
+  <style>
+    .captcha-content {
+      position: absolute;
+      top: -186px;
+      left: 0px;
+      display: none;
+      background: #fff;
+      width: 304px;
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.19);
+    }
+
+    .captcha-top {
+      padding: 0 12px;
+      height: 32px;
+    }
+
+    .captcha-top .title {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(38, 38, 38, 1);
+      line-height: 32px;
+    }
+
+    .captcha-top .refresh {
+      float: right;
+      width: 14px;
+      height: 14px;
+      margin-top: 9px;
+      margin-right: 16px;
+      background: url(http://login.console.wezhan.cn/images/icon-refresh.png) no-repeat center;
+      background-size: 100%;
+    }
+
+    .captcha-top .close {
+      float: right;
+      width: 14px;
+      height: 14px;
+      margin-top: 9px;
+      background: url(http://login.console.wezhan.cn/images/icon-close.png) no-repeat center;
+      background-size: 100%;
+    }
+
+    #captchaBox {
+      width: 304px !important;
+    }
+
+    #captchaBox img {
+      width: 74px !important;
+      margin: 1px;
+    }
+
+
+
+
+
+    #box {
+      position: relative;
+      /* height: 40px; */
+      cursor: pointer;
+      /* background:rgba(232,232,232,1); */
+      /* opacity:0.2969; */
+    }
+
+    #box .verify-item {
+      height: 40px;
+      padding: 2px;
+    }
+
+    #box .verify-item div {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      font-size: 12px;
+    }
+
+    #box .verify-default {
+      border: 1px solid #e5e5e5;
+    }
+
+    #box .verify-default div {
+      background: #e5e5e5;
+      padding: 7px 90px;
+      color: rgba(117, 117, 117, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #box .verify-default i {
+      float: left;
+      width: 20px;
+      height: 20px;
+      background: url(http://login.console.wezhan.cn/images/verify-default.png) no-repeat center;
+      background-size: 100%;
+    }
+
+    #box .verify-default p {
+      float: left;
+      width: 90px;
+      font-size: 12px;
+      color: rgba(117, 117, 117, 1);
+    }
+
+    #box .verify-refresh {
+      border: 1px solid #e5e5e5;
+    }
+
+    #box .verify-refresh {
+      display: none;
+    }
+
+    #box .verify-refresh div {
+      background: #e5e5e5;
+      padding: 7px 65px;
+      color: rgba(117, 117, 117, 1);
+    }
+
+    #box .verify-failed {
+      display: none;
+      border: 1px solid #E02020;
+    }
+
+    #box .verify-failed div {
+      background: rgba(224, 32, 32, 0.3);
+      padding: 7px 85px;
+      color: #E02020;
+    }
+
+    #box .verify-failed i {
+      float: left;
+      width: 14px;
+      height: 14px;
+      margin: 3px;
+      background: url(http://login.console.wezhan.cn/images/verify-failed.png) no-repeat center;
+      background-size: 100%;
+    }
+
+    #box .verify-failed p {
+      float: left;
+      height: 20px;
+      width: 100px;
+      font-size: 12px;
+      color: #E02020;
+      line-height: 20px;
+    }
+
+    #box .verify-success {
+      display: none;
+      border: 1px solid rgba(99, 220, 140, 1);
+    }
+
+    #box .verify-success div {
+      background: rgba(99, 220, 140, 0.3);
+      padding: 7px 105px;
+      box-sizing: border-box;
+      color: rgba(99, 220, 140, 1);
+    }
+
+    #box .verify-success i {
+      float: left;
+      width: 14px;
+      height: 14px;
+      margin: 3px;
+      background: url(http://login.console.wezhan.cn/images/verify-success.png) no-repeat center;
+      background-size: 100%;
+    }
+
+    #box .verify-success p {
+      float: left;
+      height: 20px;
+      width: 60px;
+      font-size: 12px;
+      color: rgba(99, 220, 140, 1);
+      line-height: 20px;
+    }
+
+    .mask_wrap {
+      /* display: none; */
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(0, 0, 0, .6);
+      transition: all .3s ease-in-out;
+    }
+
+    .sign-wrap {
+      padding: 32px 25px 40px;
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      transform: translateY(50%);
+      margin: auto;
+      width: 360px;
+      height: auto;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 3px;
+      transition: all .3s ease-in-out;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 22px;
+    }
+
+    .row-tip {
+      height: 37px;
+      line-height: 37px;
+      background: rgba(255, 251, 248, 1);
+      border-radius: 2px;
+      border: 1px solid rgba(255, 202, 163, 1);
+      font-size: 12px;
+      color: rgba(255, 107, 0, 1);
+      text-align: center;
+    }
+  </style>
+  <style>
+    .mask_wrap {
+      display: none;
+    }
+
+    .mask_wrap--tip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgb(0, 0, 0, .6);
+    }
+
+    .mask_wrap--tip .icon__area {
+      position: relative;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: #23cd5d;
+      margin: 0 auto;
+      margin-top: 40px
+    }
+
+    .mask_wrap--tip .icon__area::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 22px;
+      color: #fff;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      top: 36%;
+      left: 10px;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      transform: translate(-50%, -30%) rotate(45deg);
+      -webkit-transform: translate(90%, -28%) rotate(45deg);
+    }
+
+
+
+    .mask_wrap--tip .mask_content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 360px;
+      height: 160px;
+      background: rgba(255, 255, 255, 1);
+      border-radius: 3px;
+      transition: all .3s ease-in-out;
+    }
+
+    .mask_wrap--tip .tip {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #989898;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mask_wrap">
+
+    <div class="sign-wrap">
+      <div class="header">
+        <span>绑定微信</span>
+        <span><i class="iconfont iconguanbi"></i></span>
+      </div>
+      <div class="form-row row-tip">
+        解绑后，您将无法使用微信登录
+      </div>
+      <div class="form-row row-sms">
+        <span class="ipt-wrap">
+          <input type="text" class="ipt ipt-sms" ka="signup-sms" placeholder="验证码" name="phoneCode" maxlength="6">
+          <input type="hidden" name="smsType" value="1">
+          <button type="button" class="btn btn-sms">发送验证码</button>
+        </span>
+        <div class="tip-error tip-sms"></div>
+      </div>
+      <div class="form-row" id="box" onselectstart="return false;">
+        <div value="default" class="verify-item verify-default handler-verification">
+          <div>
+            <i></i>
+            <p>点此进行验证</p>
+          </div>
+        </div>
+        <div class="verify-item verify-refresh">
+          <div>点击旋转图块复原图片</div>
+        </div>
+        <div class="verify-item verify-failed">
+          <div>
+            <i></i>
+            <p>验证失败，请重试</p>
+          </div>
+        </div>
+        <div class="verify-item verify-success">
+          <div>
+            <i></i>
+            <p>验证成功</p>
+          </div>
+        </div>
+        <div class="captcha-content">
+          <div class="captcha-top">
+            <span class="title">请完成验证</span>
+            <span class="close" value="close"></span>
+            <span class="refresh" value="refresh"></span>
+          </div>
+          <div id="captchaBox">
+
+          </div>
+        </div>
+        <div class="tip-error tip-code"></div>
+      </div>
+      <div class="form-btn">
+        <button type="button" class="signin-btn cancel">取消</button>
+        <button type="button" class="signin-btn submit">确定</button>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <div class="mask_wrap">
+    <div class="mask_content">
+      <div class="icon__area"></div>
+      <div class="tip">回复成功</div>
+    </div>
+  </div>
+  <div class="mask_wrap--tip">
+    <div class="mask_content">
+      <div class="icon__area"></div>
+      <div class="tip">回复成功</div>
+    </div>
+  </div>
+  <div class="layer-tip"></div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  /**
+   * 验证是否是手机号
+   * @param {*} tel 
+   */
+  function validateTel(tel) {
+    var TEL_REGEXP =
+      /^1(?:3\d{3}|5[^4\D]\d{2}|8\d{3}|7(?:[35678]\d{2}|4(?:0\d|1[0-2]|9\d))|9[189]\d{2}|66\d{2})\d{6}$/
+    if (TEL_REGEXP.test(tel)) {
+      return true;
+    }
+    return false;
+  }
+  //去左右空格;
+  function trim(s) {
+    return s.replace(/(^\s*)|(\s*$)/g, "");
+  }
+
+  function checkphone(phoneNum) {
+    var isPhoneNumber = validateTel(phoneNum);
+    if (trim(phoneNum) === "" && !isPhoneNumber) {
+      $("#login").find(".tip-phone").show().html("请输入手机号")
+      return false;
+    } else if (!isPhoneNumber) {
+      $("#login").find(".tip-phone").show().html("手机号格式不正确")
+      return false;
+    } else {
+      return true
+
+    }
+  }
+
+  function checkSms(sms) {
+    if (trim(sms) === "") {
+      $("#login").find(".tip-sms").show().html("请输入验证码")
+      return false
+    }
+    return true
+  }
+
+  function checkPwd(pwd) {
+    let pwdReg = new RegExp("^[A-Za-z\\d@$,.!%*#?&]{6,16}$");
+    if (trim(pwd) === "") {
+      $("#login").find(".tip-pwd").show().html("请输入密码")
+      return false
+    }
+    if (pwd.length < 6 || pwd.length > 16) {
+      $("#login").find(".tip-pwd").show().html("密码长度必须为6-16位")
+      return false
+    }
+    if (!pwdReg.test(pwd)) {
+      $("#login").find(".tip-pwd").show().html("只能包含数字、字母以及英文标点符号")
+      return false
+    }
+    return true
+  }
+
+  function checkConfrimPwd(pwd, confirmPwd) {
+    if (trim(confirmPwd) === "") {
+      $("#login").find(".tip-confirm-pwd").show().html("请输入确认密码")
+      return false
+    }
+    if (pwd !== confirmPwd) {
+      $("#login").find(".tip-confirm-pwd").show().html("两次输入密码不一致,请重新输入")
+      return false
+    }
+    return true
+  }
+  $("#login").find(".dropdown-select").click(function () {
+    $("#login").find(".dropdown-menu").toggleClass("dropdown-menu-open")
+    $("#login").find(".dropdown-arrow").toggleClass("dropdown-arrow-open")
+
+  })
+  $("#login").find(".dropdown-menu ul li").click(function (e) {
+    let curEle = $(e.currentTarget)
+    let val = curEle.attr("data-val")
+    console.log(curEle)
+    curEle.addClass("selected").siblings().removeClass("selected")
+    console.log(val)
+  })
+
+  function passwordLogin() {
+    let phone = $("#login").find(".ipt-phone").val();
+    let smsCode = $("#login").find(".ipt-sms").val();
+    let pwd = $("#login").find(".ipt-pwd").val();
+    let comfirmPwd = $("#login").find(".ipt-confirmPwd").val();
+    if (!checkphone(phone)) return false;
+    if (!checkSms(smsCode)) return false
+    if (!checkPwd(pwd)) return false
+    if (!checkConfrimPwd(pwd, comfirmPwd)) return false
+    return true
+  }
+  $("#login").find(".register").click(function () {
+
+    let isAllowLogin = passwordLogin();
+    console.log(isAllowLogin, 'isAllowLoginisAllowLogin')
+    if (isAllowLogin) {
+      alert("允许")
+    }
+
+  })
+  $("#login").find("input").on(" input propertychange", function () {
+    $("#login").find(".tip-error").hide();
+  })
+</script>
+
+</html>

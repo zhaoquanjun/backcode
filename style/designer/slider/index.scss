@@ -1,0 +1,14 @@
+@import '../base/var_blank.scss';
+@import './control-menu.scss';
+@import './theme-menu.scss';
+
+.designer-nav__slider--area {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9;
+  width: $--nav-first-level-width-value;
+  margin-top: $--header-height-value;
+  background: $--usual-background-nav; 
+}

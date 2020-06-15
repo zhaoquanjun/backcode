@@ -1,0 +1,87 @@
+.c-step-progress {
+  width: 100%;
+
+}
+
+.c-step-progress .step-slider {
+  padding: 32px 0 40px 0;
+}
+
+.c-step-progress .step-slider .step-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.c-step-progress .step-slider .step-list-text {
+  padding: 24px 0;
+}
+
+.c-step-progress .step-list .step-list-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  width: 33.3333%;
+  line-height: 20px;
+
+}
+
+/* .c-step-progress .step-list .step-list-item.selected b,
+.c-step-progress .step-list .step-list-item.selected i {
+  background: rgba(1, 128, 254, 1);
+
+}
+
+.c-step-progress .step-list .step-list-item.selected b,
+.c-step-progress .step-list .step-list-item.selected i,
+.c-step-progress .step-list .step-list-item.selected {
+  color: rgba(1, 128, 254, 1);
+} */
+
+.c-step-progress .step-list>:last-child {
+  width: auto;
+}
+
+.c-step-progress .step-list .step-list-item i {
+  display: inline-block;
+  width: 100%;
+  border: 1px dashed #D7D8D9;
+  box-sizing: border-box;
+
+}
+
+.c-step-progress .step-list .step-list-item b {
+  flex: none;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin: 0 5px;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #D7D8D9;
+}
+
+.c-step-progress .step-list .step-list-item.selected b {
+  background-color: #FF6B00;
+}
+
+.c-step-progress .step-list .step-list-item.selected i {
+  // border-color: #FF6B00;
+  // border-style: solid;
+}
+
+
+
+.step-list-content {
+  align-items: flex-start !important;
+}
+
+.step-list-content .step-list-item {
+  width: 33.3333% !important;
+  padding: 0 20px;
+}
+
+@media screen and (max-width: 991px) {}

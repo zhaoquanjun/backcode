@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background: #000;
+    }
+
+    .icon__area {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+
+    .icon__area::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 22px;
+      color: #000;
+      border-bottom: 2px solid;
+      border-right: 2px solid;
+      top: 36%;
+      left: 10px;
+      -webkit-transform-origin: center;
+      transform-origin: center;
+      transform: translate(-50%, -30%) rotate(45deg);
+      -webkit-transform: translate(90%, -28%) rotate(45deg);
+    }
+
+
+
+    .close {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #fff;
+      margin: 0 auto;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .close:before,
+    .close:after {
+      position: absolute;
+
+      content: ' ';
+      height: 33px;
+      width: 2px;
+      background-color: #333;
+    }
+
+    .close:before {
+      transform: rotate(45deg);
+    }
+
+    .close:after {
+      transform: rotate(-45deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="icon__area"></div>
+  <div class="close"></div>
+</body>
+
+</html>

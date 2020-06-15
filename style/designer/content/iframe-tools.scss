@@ -1,0 +1,308 @@
+@import '../base/var_blank.scss';
+
+// tools area
+.des-Tools {
+  .des-Tools__area {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+
+    .control-tools {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      height: 27px;
+      display: none;
+      z-index: 10;
+      pointer-events: none;
+      border-width: 2px;
+      border-style: solid;
+
+      .breadcrumbs {
+        position: absolute;
+        left: 0;
+        top: -22px;
+        white-space: nowrap;
+
+        li {
+          height: 22px;
+          font-size: $--font-size-normal;
+          line-height: 22px;
+          background: $--popup-background-main;
+          color: $--color-main;
+
+          i {
+            font-size: $--font-size-small;
+            color: $--color-main;
+          }
+
+          &:hover {
+            background: $--font-color-hover;
+            color: $--popup-font-color-auxiliary;
+          }
+        }
+      }
+    }
+
+    #fmHoverHolder {
+      border-width: 1px !important;
+      border: 1px solid $--color-main;
+      background: rgba(255, 249, 245, 0.4);
+    }
+
+    #fmdragAndSelectedHolder {
+      z-index: 11;
+      border-color: $--color-main;
+
+      .resize-handle {
+        position: absolute;
+        right: -6px;
+        bottom: -6px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        cursor: nwse-resize;
+        pointer-events: auto;
+        border: 2px solid $--color-main;
+        background: $--popup-background-main;
+      }
+
+      .resize-height__handle {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: -1px;
+        cursor: ns-resize;
+        pointer-events: auto;
+        width: 31px;
+        height: 17px;
+        background: url('../images/resize_handler.png') no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .reset-margin__handler {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $--color-main;
+        pointer-events: auto;
+        width: 12px;
+        height: 12px;
+        background: $--popup-background-main;
+        border: 1px solid $--color-main;
+      }
+
+      #resizeMarginTopHandler {
+        top: -1px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: ns-resize;
+      }
+
+      #resizeMarginLeftHandler {
+        left: -1px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        cursor: ew-resize;
+      }
+
+      #resizeMarginRightHandler {
+        right: -1px;
+        top: 50%;
+        transform: translate(50%, -50%);
+        cursor: ew-resize;
+      }
+
+      .breadcrumbs {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -32px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 32px;
+        pointer-events: auto;
+        border: 1px solid $--popup-border-color;
+        background: $--popup-background-main;
+        white-space: nowrap;
+        border-radius: $--border-radius-base;
+
+        li {
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          font-size: $--font-size-normal;
+          text-align: center;
+          background: $--popup-background-main;
+          border-left: 1px solid $--popup-border-color;
+          cursor: pointer;
+
+          &:hover {
+            background: $--font-color-hover;
+
+            i {
+              color: $--popup-font-color-auxiliary;
+            }
+          }
+        }
+
+        li:first-of-type,
+        li:last-of-type {
+          width: auto;
+          padding: 0 8px;
+        }
+
+        li:first-of-type {
+          border-left: none;
+        }
+
+        li.hover-name {
+          font-size: $--font-size-normal;
+          padding: 0 8px;
+          cursor: grab !important;
+        }
+
+        li.delete:hover {
+          background: $-font-color-danger;
+        }
+
+        li.disabled {
+          cursor: $--cursor-not-allowed-style;
+          color: $--usual-font-color-disabled;
+          background: $--popup-font-color-auxiliary;
+
+          i {
+            cursor: $--cursor-not-allowed-style;
+            color: $--usual-font-color-disabled;
+          }
+
+          &:hover {
+            i {
+              color: $--usual-font-color-disabled;
+            }
+          }
+        }
+
+        li.up, li.down {
+          i {
+            margin-left: 5px;
+          }
+        }
+
+        li.switch-full,
+        li.switch-notfull {
+          i {
+            display: block;
+            transform: scale(0.5) translateX(-2px);
+          }
+        }
+      }
+
+      .navcontainer--breadcrumbs {
+        right: 100px !important;
+      }
+    }
+
+    #addControlThumb {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transform: translate(0px, 0px);
+      display: none;
+      width: 60px;
+      height: 60px;
+      z-index: 99;
+    }
+
+    #fmDropError {
+      position: relative;
+      top: 0px;
+      left: 0px;
+      transform: translate(0px, 0px);
+      display: none;
+      z-index: 1;
+      background-color: $-font-color-danger;
+
+      p {
+        position: absolute;
+        left: 8px;
+        top: -32px;
+        min-width: 129px;
+        font-size: $--font-size-normal;
+        padding: 6px 8px;
+        color: $-font-color-danger;
+        background-color: rgba(234, 56, 76, 0.2);
+        border-radius: 2px;
+      }
+    }
+
+    #fmPlaceHolder {
+      position: absolute;
+      display: none;
+      left: 0;
+      top: 0;
+      z-index: 100;
+      background-color: $--color-main;
+    }
+
+    #textEditor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      display: none;
+      z-index: 11;
+      pointer-events: none;
+
+      .text-editor__setting--box {
+        position: absolute;
+        top: -36px;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 226px;
+        height: 34px;
+        background: $--popup-background-main;
+        border: 1px solid $--popup-border-color;
+        border-radius: 3px;
+
+        li {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          float: left;
+          width: 32px;
+          height: 32px;
+          cursor: pointer;
+          pointer-events: auto;
+          border-left: 1px solid $--popup-border-color;
+
+          i,
+          span {
+            font-size: $--font-size-small;
+            color: $--popup-font-color-main;
+          }
+
+          &:hover {
+            i {
+              color: $--font-color-hover;
+            }
+          }
+        }
+
+        li.selected {
+          i {
+            color: $--font-color-selected;
+          }
+        }
+
+        li:first-of-type {
+          border-left: none;
+        }
+      }
+    }
+  }
+}

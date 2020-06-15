@@ -1,0 +1,207 @@
+.data-list__area {
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2px;
+    padding: 0 14px;
+    width: 100%;
+    height: 40px;
+    border-radius: $--border-radius-base;
+    background: $--panel-background-block-color;
+
+    i {
+      color: $--usual-font-color-sub;
+      font-size: $--font-size-large;
+    }
+    .disabled {
+      color: $--usual-font-color-disabled;
+      cursor: not-allowed;
+      background: none;
+      border: none;
+
+      &:hover {
+        color: $--font-color-hover;
+      }
+    }
+
+    .left-part {
+      i {
+        font-size: $--font-size-normal;
+      }
+      .handler-move {
+        cursor: move;
+      }
+      .handler-sort {
+        color: $--usual-font-color-sub;
+      }
+
+      span {
+        display: inline-block;
+      }
+
+      .select-icon__area {
+        position: relative;
+        flex: none;
+        margin-left: 8px;
+        width: 14px;
+        height: 14px;
+        border: 1px solid $--usual-font-color-sub;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &::after {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: none;
+          content: '';
+          width: 6px;
+          height: 6px;
+          border-radius: 50%;
+          background: transparent;
+        }
+      }
+
+      .switch-pricture__area {
+        position: relative;
+        margin: 0 8px;
+        width: 36px;
+        height: 26px;
+        border-radius: $--border-radius-base;
+        overflow: hidden;
+
+        img {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 100%;
+          z-index: 0;
+        }
+
+        .bgColor-space__area {
+          display: block;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          line-height: 26px;
+        }
+
+        b {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: none;
+          width: 100%;
+          height: 100%;
+          border-radius: $--border-radius-base;
+          background: rgba(38, 38, 38, 0.56);
+          cursor: pointer;
+          z-index: 1;
+
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: $--usual-font-color-main;
+          }
+        }
+
+        &:hover {
+          b {
+            display: block;
+
+            i.switch-icon {
+              color: $--usual-font-color-main;
+            }
+          }
+        }
+      }
+
+      .desc {
+        padding-left: 8px;
+        color: $--usual-font-color-main
+      }
+    }
+
+    .right-part {
+      display: none;
+      i {
+        margin-right: 8px;
+        font-size: 14px;
+        color: $--usual-font-color-main;
+      }
+    }
+
+    &:hover {
+      background: $--list-background-hover;
+
+      .select-icon__area {
+        border-color: $--font-color-hover;
+        &::after {
+          background-color: $--font-color-hover;
+        }
+      }
+
+      i {
+        color: $--font-color-hover !important;
+
+        &:hover {
+          color: $--font-color-hover !important;
+        }
+      }
+
+      i.disabled {
+        color: $--popup-font-color-sub !important;
+        cursor: not-allowed;
+      }
+
+      span.select-area {
+        border-color: $--popup-font-color-sub;
+      }
+
+      .desc {
+        color: $--font-color-hover;
+      }
+
+      .right-part {
+        display: block;
+      }
+    }
+  }
+
+  li.selected {
+    background: $--list-background-selected;
+    i {
+      color: $--font-color-selected !important;
+    }
+
+    i.disabled {
+      color: $--popup-font-color-sub !important;
+      cursor: not-allowed;
+
+      &:hover {
+        color: $--popup-font-color-sub;
+      }
+    }
+
+    .left-part {
+      .select-icon__area {
+        border-color: $--color-main;
+        &::after {
+          display: block;
+          background: $--color-main;
+        }
+      }
+      .desc {
+        color: $--font-color-selected;
+      }
+    }
+    .right-part {
+      display: block;
+    }
+  }
+}

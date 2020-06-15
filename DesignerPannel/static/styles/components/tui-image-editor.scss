@@ -1,0 +1,115 @@
+.beautify-img-editor {
+  .el-dialog {
+    width: 1000px !important;
+
+    .el-dialog__header {
+      padding: 0;
+      padding-top: 20px;
+
+      .el-dialog__headerbtn {
+        right: 20px;
+      }
+    }
+
+    .el-dialog__body {
+      margin-top: 36px;
+      padding: 0;
+
+      .tui-image-editor-container {
+        overflow: visible;
+        .tui-image-editor-main-container {
+          border: none !important;
+          bottom: 70px !important;
+          background-color: $--popup-background-main-beautify;
+
+          .tui-image-editor-header {
+            position: absolute;
+            top: -34px;
+            right: 90px;
+            display: inline-block;
+            width: 22px;
+            height: 24px;
+            min-width: 22px;
+            height: 24px;
+
+            .tui-image-editor-header-buttons {
+              margin: 0;
+
+              button {
+                border-radius: 0 !important;
+                overflow: hidden;
+                padding: 0 20px !important;
+                width: 76px !important;
+                height: 32px !important;
+                line-height: 32px !important;
+              }
+            }
+          }
+
+          .tui-image-editor-main {
+            top: 0;
+
+            .tui-image-editor-submenu {
+              .tui-image-editor-submenu-style {
+                padding-bottom: 10px;
+              }
+            }
+
+            .tui-image-editor-align-wrap {
+              vertical-align: top;
+              bottom: auto !important;
+
+              .tui-image-editor {
+                top: 40px !important;
+                width: 350px !important;
+                height: 350px !important;
+                .tui-image-editor-canvas-container {
+                  max-height: 400px !important;
+                }
+              }
+            }
+          }
+        }
+
+        .tui-image-editor-controls {
+          .tui-image-editor-menu {
+            height: 70px;
+            background-color: $--popup-background-block-beautify;
+
+            .tui-image-editor-item {
+              .tui-image-editor-icpartition {
+                position: absolute;
+                top: -36px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                height: 70px;
+                background-color: $--popup-border-line-beautify;
+              }
+            }
+
+            .tui-image-editor-item.active {
+              background-color: $--background-selected
+            }
+
+            .tui-image-editor-item.tie-btn-delete,
+            .tui-image-editor-item#tie-btn-delete,
+            .tui-image-editor-item.tie-btn-delete-all,
+            .tui-image-editor-item#tie-btn-delete-all {
+              display: none;
+            }
+          }
+        }
+
+        .tui-image-editor-checkbox>label>span, .tui-image-editor-range-wrap label {
+          color: $--popup-font-color-main;
+        }
+      }
+
+      .tui-image-editor-range-value {
+        color: $--popup-font-color-main;
+        background-color: $--popup-background-auxiliary;
+      }
+    }
+  }
+}

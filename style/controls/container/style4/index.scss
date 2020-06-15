@@ -1,0 +1,35 @@
+.c-block {
+  max-width: 100%;
+  display: inline-block;
+
+  &::before,
+  &::after {
+    display: block;
+    content: '';
+    clear: both;
+    zoom: 1;
+    clear: both;
+  }
+
+  &>.Area {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+
+  &>.sm-empty {
+    padding-bottom: 0;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .c-block {
+    width: 100% !important;
+    max-width: calc(100% - 3.733% - 3.733%);
+    margin-left: 3.733% !important;
+    margin-right: 3.733% !important;
+  }
+
+}

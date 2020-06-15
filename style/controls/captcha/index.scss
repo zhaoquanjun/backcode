@@ -1,0 +1,175 @@
+.captcha {
+  position: relative;
+  height: 40px;
+  cursor: pointer;
+
+  .captcha-content {
+    position: absolute;
+    top: -186px;
+    left: 0px;
+    display: none;
+    background: #fff;
+    width: 304px;
+    z-index: 10;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.19);
+  }
+
+  .captcha-top {
+    padding: 0 12px;
+    height: 32px;
+  }
+
+  .captcha-top .title {
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(38, 38, 38, 1);
+    line-height: 32px;
+  }
+
+  .captcha-top .refresh {
+    float: right;
+    width: 14px;
+    height: 14px;
+    margin-top: 9px;
+    margin-right: 16px;
+    background: url(http://login.console.wezhan.cn/images/icon-refresh.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  .captcha-top .close {
+    float: right;
+    width: 14px;
+    height: 14px;
+    margin-top: 9px;
+    background: url(http://login.console.wezhan.cn/images/icon-close.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  #captchaBox {
+    width: 304px !important;
+  }
+
+  #captchaBox img {
+    width: 74px !important;
+    margin: 1px;
+  }
+
+
+  .verify-item {
+    height: 40px;
+    padding: 2px;
+  }
+
+  .verify-item div {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .verify-default {
+    border: 1px solid #e5e5e5;
+  }
+
+  .verify-default div {
+    background: #e5e5e5;
+    padding: 7px 90px;
+    color: rgba(117, 117, 117, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .verify-default i {
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: url(http://login.console.wezhan.cn/images/verify-default.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  .verify-default p {
+    float: left;
+    width: 90px;
+    font-size: 12px;
+    color: rgba(117, 117, 117, 1);
+  }
+
+  .verify-refresh {
+    border: 1px solid #e5e5e5;
+  }
+
+  .verify-refresh {
+    display: none;
+  }
+
+  .verify-refresh div {
+    background: #e5e5e5;
+    padding: 7px 65px;
+    color: rgba(117, 117, 117, 1);
+  }
+
+  .verify-failed {
+    display: none;
+    border: 1px solid #E02020;
+  }
+
+  .verify-failed div {
+    background: rgba(224, 32, 32, 0.3);
+    padding: 7px 85px;
+    color: #E02020;
+  }
+
+  .verify-failed i {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin: 3px;
+    background: url(http://login.console.wezhan.cn/images/verify-failed.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  .verify-failed p {
+    float: left;
+    height: 20px;
+    width: 100px;
+    font-size: 12px;
+    color: #E02020;
+    line-height: 20px;
+  }
+
+  .verify-success {
+    display: none;
+    border: 1px solid rgba(99, 220, 140, 1);
+  }
+
+  .verify-success div {
+    background: rgba(99, 220, 140, 0.3);
+    padding: 7px 105px;
+    box-sizing: border-box;
+    color: rgba(99, 220, 140, 1);
+  }
+
+  .verify-success i {
+    float: left;
+    width: 14px;
+    height: 14px;
+    margin: 3px;
+    background: url(http://login.console.wezhan.cn/images/verify-success.png) no-repeat center;
+    background-size: 100%;
+  }
+
+  .verify-success p {
+    float: left;
+    height: 20px;
+    width: 60px;
+    font-size: 12px;
+    color: rgba(99, 220, 140, 1);
+    line-height: 20px;
+  }
+}

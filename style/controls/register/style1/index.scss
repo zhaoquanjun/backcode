@@ -1,0 +1,208 @@
+.c-register {
+  .sign-wrap {
+    width: 300px;
+    margin: 0 auto;
+    display: inline-block;
+
+    .form-row {
+      width: 100%;
+      position: relative;
+      margin: 0 0 25px;
+    }
+
+    .dropdown-select {
+      position: absolute;
+      top: 1px;
+      left: 11px;
+      height: 40px;
+      z-index: 1;
+      background: 0 0;
+    }
+
+    .dropdown-select {
+      .text-select {
+        display: inline-block;
+        font-style: normal;
+        cursor: pointer;
+        line-height: 26px;
+        padding: 7px 25px 7px 0;
+        border: 0;
+        text-align: right;
+        border-right: 1px solid #DBE6E9;
+      }
+
+      .dropdown-arrow {
+        font-size: 12px;
+        position: absolute;
+        right: 10px;
+        top: 15px;
+        transform: rotate(90deg);
+        cursor: pointer;
+      }
+
+      .dropdown-arrow-open {
+        transform: rotate(270deg);
+      }
+    }
+
+    .ipt-wrap {
+      position: relative;
+      display: block;
+    }
+
+    .ipt {
+      width: 100%;
+      min-width: 0;
+      padding: 9px 18px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      min-height: 22px;
+      line-height: 22px;
+      font-size: 13px;
+    }
+
+    .ipt-phone {
+      padding-left: 75px;
+      box-sizing: border-box;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: relative;
+      height: 0;
+      margin-right: 2px;
+      z-index: 10;
+      left: 0;
+
+      ul {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px #DBE6E9 solid;
+        border-top: 0;
+        background-color: #fff;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+        width: 176px;
+        max-height: 292px;
+
+        li {
+          line-height: 42px;
+          padding: 0 15px;
+          cursor: pointer;
+
+          &:active,
+          &:hover {
+            background-color: #f2f5f9;
+          }
+        }
+      }
+
+      .num {
+        float: right;
+      }
+    }
+
+
+    .dropdown-menu-open {
+      display: block;
+    }
+
+    .form-btn {
+      .signin-btn {
+        width: 100%;
+        display: inline-block;
+        min-width: 112px;
+        box-sizing: border-box;
+        height: 36px;
+        line-height: 36px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+
+    .tip-error {
+      display: none;
+      position: absolute;
+      left: 3px;
+      top: 45px;
+      height: 18px;
+      padding: 0 0 0 27px;
+      background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAABmklEQVRIS2P8////fwY84P/zhwx/Tu1l+HvpOMP/N88Z/r9/BVbNKCjGwCgiycCsZ8nAYubMwCgpj88YBkZcFv27d43h15Jehr+XT+I1ACbJrGvOwBZTzMCkpIVVPaZF//4y/JrfwfBn5woGAp7FMJCRkZGBxT2CgS2xgoGBiRlFHtWir58YfvQUMvy9QpwvcHmVWcecgaOkn4GBmw+uBGHRv78MP5rTKLYEHpQgy2pnwX0Gt+jX3FaG3zuWExUfxCpi9YhkYEuuhiQeUGIARfyPinCS44SQhaA44+hYCU4gYIt+NCUTnboIGY4uD0qNHHVzGRj/Pb3//1u+D6n6SVLPNWkrA+OvDXP//1rSR5JGUhWzxRQxMH5vSvkPyvW0BKDSg/Fbnvf/f88e0NIeBiYpBQbGr7Gm//9//4ZhEffqKyRZ/v/zR4ZvSdbYix9OLnpZxE3HoKNbYqBb8qZbhqVbEUTXQhWU+OlSTYBzGb0qPrBldKnKYYUHXRonSCUV7ZtbaMXi/2cPGP6c3oe/AWnqxMAopYC3EAYA3iAYHRf+bDoAAAAASUVORK5CYII=) no-repeat 0;
+      background-size: 16px auto;
+      color: #262626;
+      text-align: left;
+      line-height: 18px;
+    }
+
+    .layer-tip {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 50%;
+      left: 50%;
+      background: rgba(0, 0, 0, 0.7);
+      width: 250px;
+      transform: translate3d(-50%, -50%, 0);
+      padding: 15px;
+      line-height: 20px;
+      text-align: center;
+      color: #fff;
+      border-radius: 3px;
+    }
+
+    .text-tip {
+      margin: 11px 0 0 0;
+    }
+
+    .text-tip a {
+      color: #262626;
+    }
+
+    .left-tip {
+      float: left;
+    }
+
+    .right-tip {
+      float: right;
+    }
+
+    .form-btn {
+      .login {
+        margin-top: 20px;
+
+      }
+    }
+
+    .btn-sms {
+      cursor: pointer;
+      position: absolute;
+      right: 1px;
+      top: 3px;
+      font-size: 14px;
+      background-color: #fff;
+      min-width: 104px;
+      border: 0;
+      box-sizing: content-box;
+      height: 36px;
+      line-height: 36px;
+      border-left: 1px solid rgba(219, 230, 233, 1);
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    & {
+      width: calc(100% - 3.733% - 3.733%) !important;
+      margin-left: 3.733% !important;
+      margin-right: 3.733% !important;
+    }
+
+    .sign-wrap {
+      width: 100%;
+      // padding: 10px;
+      box-sizing: border-box;
+    }
+  }
+
+}

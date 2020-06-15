@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图集</title>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1386718_d22fk3rche.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 图集 begin */
+
+        .atlas {
+            width: 100%;
+            height: auto;
+        }
+
+        .atlas .atlas-list {
+            width: 100%;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        .atlas .atlas-list .list-item {
+            /* 设置一行占几个列表 */
+            width: 25%;
+            padding: 5px;
+            display: inline-block;
+            text-align: center;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+
+
+        }
+
+        .atlas .atlas-list .list-item a {
+            display: block;
+        }
+
+        .atlas .atlas-list .list-space {
+            position: relative;
+        }
+
+        .atlas-list .list-item:nth-child(4n+1) {
+            padding-left: 0;
+        }
+
+        .atlas .atlas-list .imgview {
+            width: 100%;
+            /* 设置图片高度 */
+            height: 340px;
+            display: -webkit-flex;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-justify-content: center;
+            -moz-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .atlas .atlas-list .imgview:hover img {
+            -webkit-transform: scale(1.3);
+            -moz-transform: scale(1.3);
+            -ms-transform: scale(1.3);
+            -o-transform: scale(1.3);
+            transform: scale(1.3);
+        }
+
+        .atlas .atlas-list .imgview img {
+            height: auto;
+            -webkit-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+            -o-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+            -moz-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+            transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+        }
+
+        .atlas .atlas-list .list-content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            color: #fff;
+        }
+
+        .atlas .atlas-list .list-content .title {
+            width: 100%;
+            line-height: 24px;
+            font-weight: normal;
+            color: #fff;
+            font-size: 14px
+        }
+
+        .ellipsis {
+            display: inline-block;
+            overflow: hidden;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* 产品列表 end */
+        /* productlist start */
+        @media screen and (max-width: 750px) {
+
+            .atlas .atlas-list .list-item {
+                width: 100%;
+            }
+
+            .atlas .atlas-list .col-item1 {
+                width: 100%;
+            }
+
+            .atlas .atlas-list .col-item2 {
+                width: 50%;
+            }
+
+            .atlas .atlas-list .col-item3 {
+                width: 50%;
+            }
+
+            .atlas .atlas-list .col-item4 {
+                width: 50%;
+            }
+
+            .atlas .atlas-list .col-item5 {
+                width: 50%;
+            }
+
+            .atlas .atlas-list .col-item6 {
+                width: 50%;
+            }
+
+            .atlas .atlas-list .list-item .imgview {
+                height: 180px !important;
+            }
+
+            .atlas .atlas-list .col-item1 .imgview {
+                height: 360px !important;
+            }
+        }
+
+        /* productlist end */
+    </style>
+    <style>
+        .atlas-preview {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 100;
+        }
+
+        .atlas-preview .swiper {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .atlas-preview .swiper .image-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .atlas-preview .swiper .image-wrap img {
+            width: 100%;
+        }
+
+        .atlas-preview .slider-btn {
+            width: 40px;
+            height: 40px;
+            background: rgba(38, 38, 38, 0.7);
+            border-radius: 2px;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            color: #fff;
+            border: none;
+        }
+
+        .atlas-preview .slider-btn .iconfont {
+            color: #fff;
+        }
+
+
+        .atlas-preview .banner-slider {
+            width: 100%;
+            height: 80%;
+            position: relative;
+        }
+
+        .atlas-preview .banner-slider .swiper .image-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+        }
+
+        .atlas-preview .banner-slider .left-prev {
+            left: 20%;
+            transform: rotate(180deg);
+        }
+
+        .atlas-preview .banner-slider .right-next {
+            right: 20%;
+        }
+
+        .atlas-preview .banner-slider .dialog-close {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 36px;
+            right: 36px;
+            z-index: 200;
+            background-color: transparent;
+            border: none
+        }
+
+        .atlas-preview .banner-slider .dialog-close i {
+            font-size: 36px;
+            color: #fff;
+        }
+    </style>
+    <style>
+        .atlas .gallery-thumbs {
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            bottom: 34px;
+        }
+
+        .atlas .gallery-wrap {
+            width: 700px;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .atlas .thumbs-wrap {
+            position: relative;
+            width: 640px;
+            height: 110px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .atlas .thumbs-wrap .thumbs-list {
+            position: absolute;
+            top: 0px;
+            height: 110px;
+        }
+
+        .atlas .thumbs-wrap ul li {
+            float: left;
+            padding: 0 9px;
+
+        }
+
+        .atlas .thumbs-wrap ul li .gallery-item {
+
+            border: 6px solid #8C8C8C;
+            width: 110px;
+            height: 110px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .atlas .thumbs-wrap ul li img {
+            width: 100%;
+        }
+
+        .atlas .gallery-wrap .arrow-next,
+        .atlas .gallery-wrap .arrow-prev {
+            display: block;
+            width: 22px;
+            height: 32px;
+            float: left;
+            position: absolute;
+            cursor: pointer;
+            top: 50%;
+            margin-top: -16px;
+        }
+
+        .atlas .gallery-wrap .arrow-prev {
+            left: 0;
+        }
+
+        .atlas .gallery-wrap .arrow-next {
+            right: 0;
+        }
+
+        .atlas .gallery-wrap .arrow-prev i {
+            display: block;
+            width: 22px;
+            height: 32px;
+            background: url(//static.360buyimg.com/item/unite/1.0.83/components/default/preview/i/disabled-prev.png);
+        }
+
+        .atlas .gallery-wrap .arrow-next i {
+            display: block;
+            width: 22px;
+            height: 32px;
+            background: url(//static.360buyimg.com/item/unite/1.0.83/components/default/preview/i/disabled-prev.png);
+            transform: rotate(180deg)
+        }
+
+        .atlas .thumbs-wrap ul li .gallery-item.img-hover,
+        .atlas .thumbs-wrap ul li .gallery-item:hover {
+            border: 6px solid #FFFFFF;
+        }
+    </style>
+    <style>
+        .atlas .lz-see-change {
+            width: 178px;
+            padding: 10px 12px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            overflow: hidden;
+            position: fixed;
+            bottom: 200px;
+            left: 50%;
+            margin-left: -72px;
+            z-index: 310;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .atlas .see-change {
+            font-style: normal;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .atlas .see-change i {
+            font-size: 28px;
+        }
+
+        .atlas .atlas .lz-see-change-txt {
+            display: block;
+            overflow: hidden;
+            text-align: center;
+            font-size: 14px;
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 991px) {
+
+            .atlas .gallery-thumbs,
+            .atlas .lz-see-change,
+            .atlas .banner-slider .slider-btn {
+                display: none
+            }
+
+            .atlas .banner-slider {
+                height: 100%;
+            }
+
+            .atlas .banner-slider .dialog-close {
+                background-color: rgba(0, 0, 0, 0.5);
+                border: none;
+                border-radius: 50%;
+            }
+
+            .atlas .banner-slider .dialog-close i {
+                font-size: 20px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="atlas" id="cTImU2TqqcVN5A9ez1Gqi">
+        <ul class="atlas-list">
+
+        </ul>
+        <div class="atlas-preview">
+            <div class="banner-slider">
+                <div class="swiper">
+                    <div class="image-wrap">
+                        <img class="previewSrc" width="auto" height="auto"
+                            src="http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/30b132af74a44e97a0cf609b0d5506be.jpeg" />
+                    </div>
+                </div>
+                <button class="slider-btn left-prev" data-slide="prev">
+                    <i class="iconfont iconicon-des-Arrow"></i>
+                </button>
+                <button class="slider-btn right-next" @click="next" data-slide="next">
+                    <i class="iconfont iconicon-des-Arrow"></i>
+                </button>
+                <button class="dialog-close">
+                    <i class="iconfont iconguanbi"></i>
+                </button>
+                <div class="lz-see-change">
+                    <a href="javascript:;" class="see-change lz-see-change-sm mw-iconfont"><i  data-size="sm"
+                            class="iconfont iconsuoxiao"></i></a>
+                    <span class="lz-see-change-txt">100%</span>
+                    <a href="javascript:;" class="see-change lz-see-change-lg mw-iconfont" ><i data-size="lg"
+                            class="iconfont iconfangda"></i></a>
+                </div>
+            </div>
+
+            <div class="gallery-thumbs">
+                <div class="gallery-wrap">
+                    <a href="javascript:;" class="spec-arrow arrow-prev disabled" data-slide="prev" is-gallery="true"><i
+                            class="sprite-arrow-prev"></i></a>
+                    <a href="javascript:;" class="spec-arrow arrow-next" data-slide="next" is-gallery="true"><i
+                            class="sprite-arrow-next"></i></a>
+                    <div class="thumbs-wrap">
+                        <ul class="thumbs-list"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    const SWIPE_THRESHOLD = 40
+    const Default = {
+        ACTIVE: 0,
+        touch: true,
+        keyboard: true,
+    };
+    const Direction = {
+        NEXT: "next",
+        PREV: 'prev',
+    };
+    const Selector = {
+        ACTIVE_ITEM: ".list-item",
+        DIALOG_CLOSE_BTN: ".dialog-close",
+        ATLAS_PREVIEW: ".atlas-preview",
+        SLIDE_BNT: ".slider-btn",
+        SPEC_ARROW: ".spec-arrow",
+        GALLERY_ITEM: ".gallery-item",
+        THUMBS_LIST: ".thumbs-list"
+    }
+    const ClassName = {
+        IMG_HOVER: "img-hover"
+    }
+    const Event = {
+        CLICK: "click",
+        KEYDOWN: `keydown`,
+        TOUCHSTART: `touchstart`,
+        TOUCHMOVE: `touchmove`,
+        TOUCHEND: `touchend`,
+    }
+    const PointerType = {
+        TOUCH: 'touch',
+        PEN: 'pen'
+    }
+    var imgList = [
+
+        "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/30b132af74a44e97a0cf609b0d5506be.jpeg",
+        "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/7c938484fb854ba8913128131e0ab743.jpg",
+        "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/c9feddb73d4c40f589f2f2c7d56004a3.jpeg",
+        "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/JfrxhKzlDEKZ1aY_7C0UjQ.jpeg",
+        "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/KSCaC7MCUEWHi_GHh17B2w.png",
+        "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/smKCtkU3WEm0nQaTIALgZg.jpeg",
+        "//ntemimg.wezhan.cn/content/sitefiles/publicimages/2000000798.jpg",
+        // "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/smKCtkU3WEm0nQaTIALgZg.jpeg",
+
+        // "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/30b132af74a44e97a0cf609b0d5506be.jpeg",
+        // "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/7c938484fb854ba8913128131e0ab743.jpg",
+        // "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/c9feddb73d4c40f589f2f2c7d56004a3.jpeg",
+        // "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/JfrxhKzlDEKZ1aY_7C0UjQ.jpeg",
+        // "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/KSCaC7MCUEWHi_GHh17B2w.png",
+        // "http://img.andni.cn/Picture/823EB3BD-93F4-4655-B833-D604A6EF2032/GmBne1rgFUa7NgaUECVOsg.png",
+        // "//ntemimg.wezhan.cn/content/sitefiles/publicimages/2000000798.jpg"
+    ];
+    let INNER_TEM_LIST = ``;
+    imgList.forEach((item, index) => {
+        INNER_TEM_LIST +=
+            ` <li class="list-item col-item{{Model.Percent}}" data-slide-to="${index}">
+                    <div class="list-space">
+                        <div class="imgview">
+                            <img src="${item}"
+                                alt=""
+                                onload="if (this.naturalWidth > this.parentNode.clientWidth || this.naturalHeight > this.parentNode.clientHeight){if (this.naturalWidth / this.naturalHeight > this.parentNode.clientWidth / this.parentNode.clientHeight){this.style.maxHeight = '100%'; this.style.maxWidth = 'none';} else {this.style.maxWidth = '100%'; this.style.maxHeight = 'none';}}">
+                        </div>
+                        <div class="list-content">
+                            <h1 class="title ellipsis" style="color: #fff;font-size:14px">123</h1>
+                        </div>
+                    </div>  
+            </li>`;
+    });
+    $("#cTImU2TqqcVN5A9ez1Gqi .atlas-list").html(INNER_TEM_LIST);
+
+    let INNER_TEM = ``;
+    imgList.forEach((item, index) => {
+        INNER_TEM +=
+            `<li  >
+                    <div class='gallery-item  ${index==Default.ACTIVE?'img-hover':''}' data-slide-to="${index}">
+                    <img alt="" src='${item}' >
+                </div>
+            </li>`;
+    });
+    let $list = $("#cTImU2TqqcVN5A9ez1Gqi .gallery-wrap .thumbs-list");
+    $list.html(INNER_TEM);
+
+
+    class Atlas {
+        constructor(id, style, options) {
+            this._id = id
+            this._control = $('#' + id);
+            this.touchDeltaX = 0;
+
+            this._curIdx = 0;
+            this._total = imgList.length;
+
+            this.maxwidth = 100;
+        }
+        _init() {
+            this._addEventListeners();
+        }
+        //public methods
+        renderControl(data) {
+            data._Id = this._id;
+            data._SysClass = getSysClass(this._id);
+            data._Style = this._style;
+            data._Query = JSON.stringify(data.query);
+            const cacheKey = DATA_KEY + '_' + this._style;
+
+            return template(cacheKey, templates[this._style], data);
+        }
+        refreshControl(data, callback) {
+            this.imgList = data.imgList;
+            data._Id = this._id;
+            data._SysClass = getSysClass(this._id);
+            const cacheKey = DATA_KEY + '_inner';
+            const html = template(cacheKey, INNER_TEM, data);
+            this._control.find(Selector.ATLAS_LIST).html(html)
+            // document.getElementById(this._id).innerHTML = html;
+            this.dispose();
+            this._init();
+            if (typeof callback === 'function') {
+                callback(this._id);
+            }
+        }
+        _addEventListeners() {
+            // 预览大图
+            this._control.find(Selector.ACTIVE_ITEM).off(Event.CLICK).on(Event.CLICK, $.proxy(this.atlasPreviewShow,
+                this));
+            // 预览大图
+            this._control.find(Selector.GALLERY_ITEM).off(Event.CLICK).on(Event.CLICK, $.proxy(this
+                .changeThumbSelected,
+                this));
+            //关闭预览大图
+            this._control.find(Selector.DIALOG_CLOSE_BTN).off(Event.CLICK).on(Event.CLICK, $.proxy(this
+                .atlasPreviewHide, this))
+            // 点击按钮切换图片
+            this._control.find(Selector.SLIDE_BNT).off(Event.CLICK).on(Event.CLICK, $.proxy(this._prevNextClick,
+                this))
+            // 点击按钮切换图片
+            this._control.find(Selector.SPEC_ARROW).off(Event.CLICK).on(Event.CLICK, $.proxy(this._prevNextClick,
+                this))
+
+            this._control.find(".lz-see-change").off(Event.CLICK).on(Event.CLICK, $.proxy(this.scaling,
+                this))
+
+            this._addTouchEventListeners()
+        }
+        atlasPreviewShow(event) {
+
+            this._control.find(Selector.ATLAS_PREVIEW).show()
+            Default.ACTIVE = event.currentTarget.getAttribute('data-slide-to')
+            this.to(Default.ACTIVE);
+            this.gallerySlide()
+        }
+        atlasPreviewHide() {
+            this._control.find(Selector.ATLAS_PREVIEW).hide()
+        }
+        changeThumbSelected(e) {
+            let index = $(e.currentTarget).attr('data-slide-to');
+            this.to(index)
+        }
+        to(index) {
+            //设置预览大图地址
+            $("#cTImU2TqqcVN5A9ez1Gqi .image-wrap img").attr("src", imgList[index]);
+            // 设置缩略图选中样式
+            this._control.find(Selector.GALLERY_ITEM).eq(index).addClass(ClassName.IMG_HOVER).parent().siblings()
+                .children()
+                .removeClass(ClassName.IMG_HOVER);
+        }
+        next() {
+            return this.slide(Direction.NEXT)
+        }
+        prev() {
+            return this.slide(Direction.PREV)
+        }
+        _prevNextClick(e) {
+            let $this = $(e.currentTarget);
+            const direct = $this.attr('data-slide');
+            direct === Direction.NEXT ? this.next() : this.prev();
+            this.gallerySlide(direct)
+        }
+        slide(type) {
+
+            if (type === Direction.NEXT) {
+                ++Default.ACTIVE;
+                if (Default.ACTIVE >= imgList.length) Default.ACTIVE = 0;
+            } else {
+                --Default.ACTIVE;
+                if (Default.ACTIVE < 0) Default.ACTIVE = imgList.length - 1;
+            }
+            this.to(Default.ACTIVE);
+        }
+
+        gallerySlide(direct) {
+            let $thumbsList = this._control.find(Selector.THUMBS_LIST)
+            let imgWidth = $thumbsList.find("li").outerWidth();
+            let imgHeight = $thumbsList.find("li").innerHeight();
+            let imgListWidth = imgList.length * imgWidth; // 图片总宽度
+            $thumbsList.css({
+                "width": imgListWidth,
+            });
+            let specItemWidth = this._control.find(".thumbs-wrap").innerWidth(); // 图片外包裹宽度 
+            this.leftPos = Math.abs(parseInt($thumbsList.css("left")));
+            let maxLeftPos = imgListWidth - specItemWidth; // 
+            if (direct) {
+
+
+
+
+                // 前三个正常显示
+                if (parseInt(Default.ACTIVE) <= 2) {
+                    $thumbsList.css({
+                        "left": 0
+                    })
+                    return
+                }
+                // 最后一个
+                if (parseInt(Default.ACTIVE) + 1 >= this._total && Default.ACTIVE >= 5 && this._total > 5) {
+                    alert(1)
+                    //let pos = (this._total /2 ) * imgWidth
+                    $thumbsList.css({
+                        "left": -((Default.ACTIVE) - 4) * imgWidth + 'px'
+                    })
+                    return
+                }
+                // 倒数第二个
+                console.log(Default.ACTIVE, this._total)
+                if (parseInt(Default.ACTIVE) + 2 >= this._total && Default.ACTIVE >= 4 && this._total > 5) {
+                    alert(2)
+                    //let pos = (this._total /2 ) * imgWidth
+                    $thumbsList.css({
+                        "left": -((Default.ACTIVE) - 3) * imgWidth + 'px'
+                    })
+                    return
+                }
+
+                // 其他情况
+                if (Default.ACTIVE > 2 && this._total > 5) {
+                    alert(3)
+                    $thumbsList.css({
+                        "left": -imgWidth * (Default.ACTIVE - 2) + 'px'
+                    })
+                }
+
+
+            } else {
+                let middle = 5 / 2;
+
+                // 最后一个
+                if (parseInt(Default.ACTIVE) + 1 >= this._total && Default.ACTIVE + 1 > 5) {
+                    //let pos = (this._total /2 ) * imgWidth
+                    $thumbsList.css({
+                        "left": -((Default.ACTIVE) - 4) * imgWidth + 'px'
+                    })
+                    return
+                }
+                // 倒数第二个
+                if (parseInt(Default.ACTIVE) + 2 >= this._total && Default.ACTIVE + 1 > 5) {
+                    //let pos = (this._total /2 ) * imgWidth
+                    $thumbsList.css({
+                        "left": -((Default.ACTIVE) - 3) * imgWidth + 'px'
+                    })
+                    return
+                }
+                // 前三个正常显示
+                if (parseInt(Default.ACTIVE) <= 2) {
+                    $thumbsList.css({
+                        "left": 0
+                    })
+                    return
+                }
+
+                // 其他情况
+                if (Default.ACTIVE > 2 && this._total > 5) {
+                    $thumbsList.css({
+                        "left": -imgWidth * (Default.ACTIVE - 2) + 'px'
+                    })
+                }
+                // if (Default.ACTIVE * imgWidth > specItemWidth) {
+                //     $thumbsList.css({
+                //         "left": -(imgListWidth - specItemWidth) + 'px'
+                //     })
+                // }
+            }
+        }
+        scaling(e) {
+            let dataSize = e.target.getAttribute('data-size');
+            let width =  document.getElementsByClassName("previewSrc")[0].clientWidth;
+            if (dataSize === "sm") {
+              if(this.maxwidth<=10) return;
+              document.getElementsByClassName("previewSrc")[0].style.width =width -width * 0.05+'px';
+              document.getElementsByClassName("previewSrc")[0].style.maxHeight = "100%"
+              this.maxwidth -= 5;
+            } else {
+                if(this.maxwidth>=500) return
+                document.getElementsByClassName("previewSrc")[0].style.width=width +width * 0.05 +'px';
+                document.getElementsByClassName("previewSrc")[0].style.maxHeight = "none"
+                this.maxwidth += 5;
+                
+            }  
+            document.getElementsByClassName("lz-see-change-txt")[0].innerHTML=this.maxwidth +"%"  
+            // }
+            // this._control.find(".previewSrc").css({
+            //     "max-height": this.maxHeight + "%"
+            // })
+        }
+        _addTouchEventListeners() {
+            const start = event => {
+                if (this._pointerEvent && event.pointerType && PointerType[event.pointerType.toUpperCase()]) {
+                    this.touchStartX = event.clientX
+                } else if (!this._pointerEvent) {
+                    this.touchStartX = event.touches[0].clientX
+                }
+            }
+
+            const move = event => {
+                // ensure swiping with one touch and not pinching
+                if (event.touches && event.touches.length > 1) {
+                    this.touchDeltaX = 0
+                } else {
+                    this.touchDeltaX = event.touches[0].clientX - this.touchStartX
+                }
+            }
+
+            const end = event => {
+                if (this._pointerEvent && event.pointerType && PointerType[event.pointerType.toUpperCase()]) {
+                    this.touchDeltaX = event.clientX - this.touchStartX
+                }
+                if (event.touches && event.touches.length == 1) {
+                    this.touchDeltaX = event.touches[0].clientX - this.touchStartX
+                }
+                this._handleSwipe()
+
+            }
+
+            //makeArray(SelectorEngine.find(Selector.ITEM_IMG, this._element)).forEach(itemImg => {
+            //    EventHandler.on(itemImg, Event.DRAG_START, e => e.preventDefault())
+            //})
+
+            //if (this._pointerEvent) {
+            //    this._control.on(Event.POINTERDOWN, $.proxy(start,this));
+            //    this._control.on(Event.POINTERUP, $.proxy(end, this));
+            //    this._control.addClass(ClassName.POINTER_EVENT)
+            //} else {
+            this._control.off(Event.TOUCHSTART).on(Event.TOUCHSTART, $.proxy(start, this));
+            this._control.off(Event.TOUCHMOVE).on(Event.TOUCHMOVE, $.proxy(move, this));
+            this._control.off(Event.TOUCHEND).on(Event.TOUCHEND, $.proxy(end, this));
+            //}
+        }
+        _handleSwipe() {
+            const absDeltax = Math.abs(this.touchDeltaX)
+
+            if (absDeltax <= SWIPE_THRESHOLD) {
+                return
+            }
+
+            const direction = absDeltax / this.touchDeltaX
+
+            this.touchDeltaX = 0
+
+            // swipe left
+            if (direction > 0) {
+                this.prev()
+            }
+
+            // swipe right
+            if (direction < 0) {
+                this.next()
+            }
+        }
+    }
+    let atlas = new Atlas('cTImU2TqqcVN5A9ez1Gqi');
+    atlas._init();
+</script>

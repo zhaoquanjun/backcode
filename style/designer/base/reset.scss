@@ -1,0 +1,118 @@
+@import './_var_blank.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+html,
+body {
+  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /*firefox*/
+  font-size: 12px;
+  overflow: hidden;
+  color: $--usual-font-color-main;
+}
+
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -moz-user-select: none;
+  /*火狐*/
+  -webkit-user-select: none;
+  /*webkit浏览器*/
+  -ms-user-select: none;
+  /*IE10*/
+  -khtml-user-select: none;
+  /*早期浏览器*/
+  user-select: none;
+}
+
+html.site-scrollbar::-webkit-scrollbar {
+  display: none;
+  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: auto;
+}
+
+html.site-scrollbar {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+
+html.sm-design-mode.sm-image-resizing * {
+  cursor: nwse-resize !important;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  outline: none;
+  border: none;
+}
+
+/**
+* Show the overflow in IE.
+* 1. Show the overflow in Edge.
+*/
+
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+#pageManage {
+  input {
+    padding-left: 8px;
+    height: 32px;
+    line-height: 32px;
+    cursor: auto !important;
+    border: 1px solid $--popup-border-color;
+
+    &::-webkit-input-placeholder {
+      color: $--popup-font-color-sub;
+    }
+  }
+
+  select {
+    &::-webkit-input-placeholder {
+      color: $--popup-border-color;
+    }
+  }
+
+  textarea {
+    padding: 8px;
+    min-height: 80px;
+    cursor: auto !important;
+    border: 1px solid $--popup-border-color;
+    &::-webkit-input-placeholder {
+      color: $--popup-font-color-sub;
+    }
+  }
+}

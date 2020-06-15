@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ol,
+      ul,
+      li {
+        list-style: none;
+      }
+
+      .c-carouselshow {
+        position: relative;
+        display: table;
+        width: 100%;
+        min-height: 300px;
+        overflow: hidden;
+      }
+
+      .c-carouselshow .carouselshow-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        background: skyblue;
+      }
+
+      .c-carouselshow .carouselshow-item:nth-child(2n) {
+        background: goldenrod;
+      }
+
+      .c-carouselshow .carouselshow-item.hide {
+        visibility: hidden;
+      }
+
+      .c-carouselshow .carouselshow-item.selected {
+        visibility: visible;
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.5s linear;
+      }
+
+      .c-carouselshow .carouselshow-item.slide-prev__before {
+        transform: translateX(-100%);
+        transition: transform 0.5s linear;
+      }
+
+      .c-carouselshow .carouselshow-item.slide-next__after {
+        transform: translateX(100%);
+        transition: transform 0.5s linear;
+      }
+
+      .c-carouselshow .switch-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        line-height: 40px;
+        text-align: center;
+        background: #ccc;
+        cursor: pointer;
+        z-index: 11;
+      }
+
+      .c-carouselshow .switch-btn.disabled {
+        color: #666;
+        cursor: not-allowed;
+      }
+
+      .c-carouselshow .prev {
+        left: 60px;
+      }
+
+      .c-carouselshow .next {
+        right: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="c-carouselshow">
+      <div class="carouselshow-item selected"></div>
+      <div class="carouselshow-item slide-next__after hide"></div>
+      <div class="carouselshow-item hide"></div>
+      <div class="carouselshow-item hide"></div>
+      <div class="switch-btn prev">prev</div>
+      <div class="switch-btn next">next</div>
+    </div>
+  </body>
+</html>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"
+></script>
+<script>
+  $(function() {
+    var curIndex = 0
+    var item = $('.c-carouselshow').children('.carouselshow-item')
+    var len = item.length
+    var clickAble = true
+
+    _checkBtnStatus()
+
+    $('.prev').click(function() {
+      if (!clickAble) return
+      clickAble = false
+      var _this = this
+      var curItem = item.eq(curIndex)
+      var prevItem = item.eq(curIndex - 1)
+      var prevTwoItem =
+        curIndex > 1 ? item.eq(curIndex - 2) : item.eq(len - 1)
+      var nextItem = item.eq(curIndex + 1)
+      prevItem.removeClass('slide-prev__before hide').addClass('selected')
+      curItem.removeClass('selected').addClass('slide-next__after')
+      setTimeout(function() {
+        curItem.addClass('hide')
+        prevTwoItem[0] && prevTwoItem.addClass('slide-prev__before')
+        nextItem[0] && nextItem.removeClass('slide-next__after')
+        curIndex = curIndex === 0 ? len - 1 : --curIndex
+        clickAble = true
+      }, 500)
+    })
+
+    $('.next').click(function() {
+      if (!clickAble) return
+      console.log(222)
+      clickAble = false
+      var _this = this
+      var prevItem = item.eq(curIndex - 1)
+      var curItem = item.eq(curIndex)
+      var nextItem = curIndex === len - 1 ? item.eq(1) : item.eq(curIndex + 1)
+      var nextTwoItem = curIndex + 2 <= len - 1 ? item.eq(curIndex + 2) : item.eq(0)
+      nextItem.removeClass('slide-next__after hide').addClass('selected')
+      curItem.removeClass('selected').addClass('slide-prev__before')
+      setTimeout(function() {
+        curItem.addClass('hide')
+        nextTwoItem[0] && nextTwoItem.addClass('slide-next__after')
+        prevItem[0] && prevItem.removeClass('slide-prev__before')
+        console.log(curIndex)
+        curIndex = curIndex === len - 1 ? 0 : ++curIndex
+        setTimeout(function() {
+          clickAble = true
+        }, 100)
+
+      console.log(nextTwoItem, curIndex, len - 1)
+      }, 500)
+    })
+
+    function _checkBtnStatus() {
+      if (len === 1) {
+        $('.next').addClass('disabled')
+        $('.next').addClass('disabled')
+      }
+    }
+  })
+</script>

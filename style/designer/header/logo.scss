@@ -1,0 +1,22 @@
+@import '../base/_var_blank.scss';
+ 
+ //  logo area
+  .logo-area {
+    width: 60px;
+    height: $--header-height-value;
+    float: left;
+    text-align: center;
+    line-height: $--header-height-value;
+    background: $--color-main;
+
+    i {
+      font-size: $--header-logo-size;
+      color: $--usual-font-color-main;
+    }
+
+    &:hover {
+      i::before {
+        content: "\e6b8";
+      }
+    }
+  }

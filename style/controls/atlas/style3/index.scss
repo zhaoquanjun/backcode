@@ -1,0 +1,17 @@
+.c-atlas[data-c-style=style3] {
+  .atlas-list {
+    position: relative;
+  }
+  .ellipsis {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .imgview {
+    .imgSrc {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.pagination {
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+
+  .pc-pagination {
+
+    .ym-pager {
+      display: inline-block;
+      color: rgba(38, 38, 38, 1);
+      vertical-align: top;
+
+      li {
+        cursor: pointer;
+        display: inline-block;
+        font-size: 14px;
+        padding: 0 4px;
+        height: 27px;
+        min-width: 27px;
+        line-height: 27px;
+        vertical-align: top;
+        box-sizing: border-box;
+        border: 1px solid rgba(238, 238, 238, 1);
+        border-radius: 2px;
+        background-color: #fff;
+        text-align: center;
+
+        &:hover {
+          background-color: #358BFC;
+          color: rgba(255, 255, 255, 1);
+        }
+      }
+    }
+
+    .btn-prev,
+    .btn-next {
+      display: inline-block;
+      color: rgba(38, 38, 38, 1);
+      margin: 0 5px;
+      font-size: 14px;
+      padding: 0 4px;
+      height: 27px;
+      min-width: 27px;
+      line-height: 27px;
+      vertical-align: top;
+      box-sizing: border-box;
+      border: 1px solid rgba(238, 238, 238, 1);
+      border-radius: 2px;
+      background-color: #fff;
+      text-align: center;
+      cursor: pointer;
+
+      i {
+        font-size: 14px;
+        color: rgba(38, 38, 38, 1);
+      }
+
+      &:hover {
+        background: #EBECED;
+      }
+    }
+
+    .btn-prev {
+      transform: rotate(180deg);
+    }
+
+    .btn-prev.disabled,
+    .btn-next.disabled {
+      color: #c0c4cc;
+      background-color: #fff;
+      cursor: not-allowed;
+
+      i {
+        color: #EBECED;
+      }
+
+      &:hover {
+        color: #c0c4cc;
+        background-color: #fff;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .mb-pagination {
+    margin: 0 auto;
+    width: 120px;
+    padding: 10px 0;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .pagination {
+    max-width: calc(100% - 3.733% - 3.733%) !important;
+    margin-left: 3.733% !important;
+    margin-right: 3.733% !important;
+
+    .pc-pagination {
+      display: none;
+    }
+
+    .mb-pagination {
+      display: block;
+    }
+  }
+
+
+}
+
+@media screen and (min-width: 992px) {
+
+  .pagination {
+
+    .pc-pagination {
+      display: block;
+    }
+
+    .mb-pagination {
+      display: none;
+      margin: 0 auto;
+      max-width: 300px;
+    }
+  }
+
+}

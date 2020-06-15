@@ -1,0 +1,151 @@
+// confirm 修改弹窗组件样式 
+/*  confirm begin */
+.el-message-box {
+    padding: 34px 24px 29px;
+    width: 520px;
+    box-sizing: border-box;
+
+    .el-message-box__header {
+        padding: 0;
+
+        .el-message-box__title {
+            font-size: 16px;
+            line-height: 1;
+            color: $--popup-font-color-main;
+            font-weight: 500;
+        }
+
+        .el-message-box__headerbtn {
+            top: 0;
+
+            .el-icon-close {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .el-message-box__content {
+        padding: 40px;
+        color: #A1A8B1;
+        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+        .icon-warning {
+            width: 24px;
+            height: 24px;
+            background: url("~@static/images/popup/warning.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .icon-success {
+            width: 24px;
+            height: 24px;
+            background: url("~@static/images/popup/sucess.png") no-repeat center;
+            background-size: contain;
+        }
+
+        .icon-error {
+            width: 24px;
+            height: 24px;
+            background: url("~@static/images/popup/error.png") no-repeat center;
+            background-size: contain;
+        }
+
+    }
+
+    .el-message-box__btns {
+        .el-button {
+            min-width: 76px;
+            height: 40px;
+            font-size: 14px;
+            border-radius: 2px;
+            font-weight: 400;
+            color:$--background-selected;
+            border-color: $--background-selected;
+
+        }
+
+        .el-button:hover {
+            color: $--usual-font-color-main;
+            border-color: $--background-hover;
+            background-color:$--background-hover;
+        }
+
+        .el-button--primary {
+            color:  $--usual-font-color-main;
+            background: $--background-selected;
+            border: 1px solid $--background-selected;;
+        }
+
+        .el-button--primary:hover {
+            color: $--usual-font-color-main;
+            background:  $--background-hover;
+            border: 1px solid  $--background-hover;
+        }
+
+        button:nth-child(2) {
+            margin-left: 16px;
+        }
+
+
+    }
+
+}
+
+.large {
+    width: 700px;
+
+    .el-message-box__btns {
+        .el-button {
+            min-width: 90px;
+        }
+    }
+
+}
+
+.small {
+    width: 360px;
+    height: 220px;
+
+    .el-message-box__btns {
+        .el-button {
+            min-width: 90px;
+        }
+    }
+}
+
+/*  confirm end */
+
+/* notify-success */
+.el-notification {
+    border: none;
+    color:  $--usual-font-color-main;
+    border-radius: 2px;
+    padding: 12px 26px 12px 13px;
+    top: 68px !important;
+    z-index: 100000 !important;
+    max-width: 330px;
+    width: auto;
+    min-width: 100px;
+    .el-notification__content,
+    .el-notification__title,
+    .el-notification__closeBtn {
+        color:  $--usual-font-color-main;
+    }
+    .el-notification__content {
+        margin: 0;
+        line-height: 22px;
+    }
+}
+
+.el-notification.right {
+    right: 0;
+
+}
+
+.notify-success {
+    background: $-font-color-success;
+}
+
+.notify-error {
+    background: $-font-color-danger;
+}
